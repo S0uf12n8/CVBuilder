@@ -1,55 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parallax Zoom Scroll</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
     <nav>
-        <ul>
-            <li><a href="create-cv.html">Create CV</a></li>
-            <li><a href="#services">Our Services</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="#about">About Us</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">CV Builder</div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button">
+                <span></span>
+            </label>
+            <ul class="nav-menu">
+                <li><a href="create-cv.html">Create CV</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </div>
     </nav>
-
-    <section id="main" class="zoom-section">main</section>
+    
+    <section id="main" class="zoom-section">
+        <div class="hero-content">
+            <h1>Create Your Professional CV</h1>
+            <p>Find your dream job with our AI-powered CV tools</p>
+            <a href="create-cv.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
+    
     <section id="services" class="zoom-section">
+        <h2 class="section-title">Our Services</h2>
         <div class="services-container">
             <div class="service-box">
-                <img src="unnamed.png" alt="Service 1" />
-                <h3>create your CV using AI</h3>
+                <img src="unnamed.png" alt="AI CV Creation" />
+                <h3>Create your CV using AI</h3>
             </div>
             <div class="service-box">
-                <img src="images.png" alt="Service 2" />
-                <h3>Find jobs</h3>
+                <img src="images.png" alt="Job Search" />
+                <h3>Find Jobs</h3>
             </div>
             <div class="service-box">
-                <img src="ser.png" alt="Service 3" />
+                <img src="ser.png" alt="CV Analysis" />
                 <h3>CV Insights & Analyzer</h3>
             </div>
             <div class="service-box">
-                <img src="Untitled-1 copy.svg" alt="Service 4" />
+                <img src="Untitled-1 copy.svg" alt="Job Posting" />
                 <h3>Post a Job</h3>
             </div>
         </div>
     </section>
-
-    <section id="contact" class="zoom-section">Contact Us
-        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel optio consequuntur amet saepe quaerat asperiores deleniti quod sint dignissimos placeat voluptatibus inventore iusto repellat mollitia ducimus recusandae corporis atque, perferendis
-            eaque? Corrupti, itaque dicta id quibusdam in ex quos officiis quod beatae, adipisci laborum necessitatibus, expedita iste consequatur quia labore?</h3>
+    
+    <section id="contact" class="zoom-section">
+        <div class="section-content">
+            <h2 class="section-title">Contact Us</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel optio consequuntur amet saepe quaerat asperiores deleniti quod sint dignissimos placeat voluptatibus inventore iusto repellat mollitia ducimus recusandae corporis atque, perferendis eaque?</p>
+        </div>
     </section>
+    
     <section id="about" class="zoom-section">
-        <h3>About Us</h3>
-        <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi unde nostrum a praesentium saepe dolore! Corporis corrupti voluptatem quis quos pariatur commodi animi possimus. Enim consequuntur aliquam nemo explicabo molestiae?</h3>
+        <div class="section-content">
+            <h2 class="section-title">About Us</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi unde nostrum a praesentium saepe dolore! Corporis corrupti voluptatem quis quos pariatur commodi animi possimus. Enim consequuntur aliquam nemo explicabo molestiae?</p>
+        </div>
     </section>
-
+    
     <script src="script.js"></script>
 </body>
-
 </html>
