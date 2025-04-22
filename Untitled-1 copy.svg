@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 256 256">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke-width: 10px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #000;
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 28.86px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-3" cx="129.31" cy="128" r="61.24"/>
+  <g>
+    <path class="cls-3" d="M83.98,113.97h36.66c3.37,0,6.11,2.74,6.11,6.11v22.39c0,3.37-2.74,6.11-6.11,6.11h-36.66c-3.37,0-6.11-2.74-6.11-6.11v-22.39c0-3.37,2.74-6.11,6.11-6.11Z"/>
+    <rect class="cls-3" x="90.89" y="107.42" width="22.19" height="6.56" rx="3.28" ry="3.28"/>
+  </g>
+  <g>
+    <line class="cls-1" x1="156.31" y1="147.91" x2="156.31" y2="108.09"/>
+    <line class="cls-1" x1="135.8" y1="128" x2="176.82" y2="128"/>
+  </g>
+  <text class="cls-2" transform="translate(76.08 215.38) scale(1.06 1)"><tspan x="0" y="0">Job Post</tspan></text>
+</svg>
