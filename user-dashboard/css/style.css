@@ -475,3 +475,20 @@ textarea {
         width: 100%;
     }
 }
+/* Override the check display */
+.nav-item .step-complete {
+    display: none !important; /* Force hide by default */
+  }
+  
+  .nav-item.completed .step-complete {
+    display: inline-block !important; /* Only show when completed */
+  }
+  
+  /* If the check is using a ::before pseudo-element */
+  .step-complete::before {
+    content: none !important; /* Override any content */
+  }
+  
+  .nav-item.completed .step-complete::before {
+    content: "\f00c" !important; /* FontAwesome check mark */
+  }
