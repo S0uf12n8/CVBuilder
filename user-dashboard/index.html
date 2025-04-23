@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume Builder</title>
+    <link rel="stylesheet" href="/user-dashboard/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-file-alt"></i>
+                <h2>Resume Builder</h2>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <span id="progress-text">0% Complete</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item active" data-section="heading">
+                        <span class="step-number">1</span>
+                        <span class="step-text">Heading Information</span>
+                        <i class="fas fa-check step-complete"></i>
+                    </li>
+                    <li class="nav-item" data-section="education">
+                        <span class="step-number">2</span>
+                        <span class="step-text">Education</span>
+                        <i class="fas fa-check step-complete"></i>
+                    </li>
+                    <li class="nav-item" data-section="experience">
+                        <span class="step-number">3</span>
+                        <span class="step-text">Work Experience</span>
+                        <i class="fas fa-check step-complete"></i>
+                    </li>
+                    <li class="nav-item" data-section="skills">
+                        <span class="step-number">4</span>
+                        <span class="step-text">Skills</span>
+                        <i class="fas fa-check step-complete"></i>
+                    </li>
+                    <li class="nav-item" data-section="summary">
+                        <span class="step-number">5</span>
+                        <span class="step-text">Summary</span>
+                        <i class="fas fa-check step-complete"></i>
+                    </li>
+                    <li class="nav-item" data-section="review">
+                        <span class="step-number">6</span>
+                        <span class="step-text">Final Review</span>
+                        <i class="fas fa-check step-complete"></i>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="save-draft" class="btn btn-secondary">
+                    <i class="fas fa-save"></i> Save Draft
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <header class="content-header">
+                <h1 id="section-title">Heading Information</h1>
+                <div class="actions">
+                    <button id="preview-btn" class="btn btn-secondary">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                </div>
+            </header>
+
+            <!-- Section: Heading Information -->
+            <section id="heading" class="section-content active">
+                <div class="form-container">
+                    <div class="input-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="e.g. John Smith">
+                    </div>
+                    <div class="input-group">
+                        <label for="job-title">Job Title</label>
+                        <input type="text" id="job-title" name="job-title" placeholder="e.g. Software Developer">
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="e.g. john@example.com">
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="e.g. (555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="e.g. New York, NY">
+                        </div>
+                        <div class="input-group">
+                            <label for="website">Website/LinkedIn (Optional)</label>
+                            <input type="url" id="website" name="website" placeholder="e.g. linkedin.com/in/johnsmith">
+                        </div>
+                    </div>
+                </div>
+                <div class="section-nav">
+                    <button class="btn btn-primary next-btn" data-next="education">Next: Education</button>
+                </div>
+            </section>
+
+            <!-- Section: Education -->
+            <section id="education" class="section-content">
+                <div class="form-container">
+                    <div id="education-entries">
+                        <div class="education-entry">
+                            <h3>Degree #1</h3>
+                            <div class="input-group">
+                                <label for="school-name">School Name</label>
+                                <input type="text" name="school-name" placeholder="e.g. University of California">
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="degree">Degree</label>
+                                    <input type="text" name="degree" placeholder="e.g. Bachelor of Science">
+                                </div>
+                                <div class="input-group">
+                                    <label for="field-of-study">Field of Study</label>
+                                    <input type="text" name="field-of-study" placeholder="e.g. Computer Science">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="edu-start-date">Start Date</label>
+                                    <input type="month" name="edu-start-date">
+                                </div>
+                                <div class="input-group">
+                                    <label for="edu-end-date">End Date</label>
+                                    <input type="month" name="edu-end-date">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="achievements">Achievements/Activities (Optional)</label>
+                                <textarea name="achievements" rows="3" placeholder="e.g. Dean's List, Relevant Coursework, etc."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="add-education" class="btn btn-secondary">
+                        <i class="fas fa-plus"></i> Add Another Education
+                    </button>
+                </div>
+                <div class="section-nav">
+                    <button class="btn btn-secondary prev-btn" data-prev="heading">Previous</button>
+                    <button class="btn btn-primary next-btn" data-next="experience">Next: Work Experience</button>
+                </div>
+            </section>
+
+            <!-- Section: Work Experience -->
+            <section id="experience" class="section-content">
+                <div class="form-container">
+                    <div id="experience-entries">
+                        <div class="experience-entry">
+                            <h3>Experience #1</h3>
+                            <div class="input-group">
+                                <label for="company-name">Company</label>
+                                <input type="text" name="company-name" placeholder="e.g. Acme Corporation">
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="job-position">Position</label>
+                                    <input type="text" name="job-position" placeholder="e.g. Senior Developer">
+                                </div>
+                                <div class="input-group">
+                                    <label for="job-location">Location</label>
+                                    <input type="text" name="job-location" placeholder="e.g. San Francisco, CA">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="job-start-date">Start Date</label>
+                                    <input type="month" name="job-start-date">
+                                </div>
+                                <div class="input-group">
+                                    <label for="job-end-date">End Date</label>
+                                    <input type="month" name="job-end-date">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="current-job" name="current-job">
+                                        <label for="current-job">I currently work here</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="job-description">Description</label>
+                                <textarea name="job-description" rows="4" placeholder="Describe your responsibilities and achievements"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="add-experience" class="btn btn-secondary">
+                        <i class="fas fa-plus"></i> Add Another Experience
+                    </button>
+                </div>
+                <div class="section-nav">
+                    <button class="btn btn-secondary prev-btn" data-prev="education">Previous</button>
+                    <button class="btn btn-primary next-btn" data-next="skills">Next: Skills</button>
+                </div>
+            </section>
+
+            <!-- Section: Skills -->
+            <section id="skills" class="section-content">
+                <div class="form-container">
+                    <div class="input-group">
+                        <label for="skill-categories">Skills Categories</label>
+                        <p class="form-hint">Add categories like Technical Skills, Languages, Tools, etc.</p>
+                        <div id="skill-categories">
+                            <div class="skill-category">
+                                <input type="text" name="category-name" placeholder="Category name (e.g. Technical Skills)">
+                                <div class="skill-tags">
+                                    <div class="skill-tag-input">
+                                        <input type="text" placeholder="Type a skill and press Enter">
+                                    </div>
+                                    <div class="skill-tags-container">
+                                        <span class="skill-tag">JavaScript<button class="remove-tag">×</button></span>
+                                        <span class="skill-tag">HTML<button class="remove-tag">×</button></span>
+                                        <span class="skill-tag">CSS<button class="remove-tag">×</button></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="add-skill-category" class="btn btn-secondary">
+                        <i class="fas fa-plus"></i> Add Another Skill Category
+                    </button>
+                </div>
+                <div class="section-nav">
+                    <button class="btn btn-secondary prev-btn" data-prev="experience">Previous</button>
+                    <button class="btn btn-primary next-btn" data-next="summary">Next: Summary</button>
+                </div>
+            </section>
+
+            <!-- Section: Summary -->
+            <section id="summary" class="section-content">
+                <div class="form-container">
+                    <div class="input-group">
+                        <label for="professional-summary">Professional Summary</label>
+                        <p class="form-hint">Write a brief summary highlighting your qualifications, experience, and career goals (recommended: 3-5 sentences)</p>
+                        <textarea id="professional-summary" name="professional-summary" rows="6" placeholder="e.g. Detail-oriented software developer with 5+ years of experience in developing web applications..."></textarea>
+                    </div>
+                </div>
+                <div class="section-nav">
+                    <button class="btn btn-secondary prev-btn" data-prev="skills">Previous</button>
+                    <button class="btn btn-primary next-btn" data-next="review">Next: Final Review</button>
+                </div>
+            </section>
+
+            <!-- Section: Final Review -->
+            <section id="review" class="section-content">
+                <div class="review-container">
+                    <div class="resume-preview">
+                        <h3>Resume Preview</h3>
+                        <div id="resume-preview-content">
+                            <!-- Preview content will be populated by JavaScript -->
+                            <div class="preview-placeholder">
+                                <i class="fas fa-spinner fa-pulse"></i>
+                                <p>Loading preview...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="download-options">
+                        <h3>Download Options</h3>
+                        <div class="button-group">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download"></i> Download PDF
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-file-word"></i> Download DOCX
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-code"></i> Export HTML
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-nav">
+                    <button class="btn btn-secondary prev-btn" data-prev="summary">Previous</button>
+                    <button class="btn btn-success" id="finish-btn">
+                        <i class="fas fa-check-circle"></i> Finish
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+<script src="/user-dashboard/js/navigation.js"></script>
+<script src="/user-dashboard/js/storage.js"></script>
+<script src="/user-dashboard/js/validation.js"></script>
+<script src="/user-dashboard/js/app.js"></script>
+</body>
+</html>
