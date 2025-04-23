@@ -380,3 +380,17 @@ function showCompletionMessage() {
         document.body.removeChild(overlay);
     });
 }
+// Add the following code inside the DOMContentLoaded event listener in app.js
+
+// Event listeners for download buttons
+document.getElementById('download-pdf').addEventListener('click', function() {
+    exportToPDF();
+});
+
+document.getElementById('download-docx').addEventListener('click', function() {
+    exportToDocx();
+});
+
+document.getElementById('download-html').addEventListener('click', function() {
+    exportToHtml();
+});
