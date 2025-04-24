@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>AI CV Builder</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
+
 <body>
     <nav>
         <div class="nav-container">
@@ -14,7 +19,8 @@
             <label for="menu-toggle" class="menu-button">
                 <span></span>
             </label>
-            <ul class="nav-menu"> <!-- ach ban lik ikono b7al Creatcv ou CVtemplates , -->
+            <ul class="nav-menu">
+                <!-- ach ban lik ikono b7al Creatcv ou CVtemplates , -->
                 <li><a href="/user-dashboard/index.html">Create CV</a></li>
                 <li><a href="#services">Our Services</a></li>
                 <li><a href="#contact">Contact Us</a></li>
@@ -22,7 +28,7 @@
             </ul>
         </div>
     </nav>
-    
+
     <section id="main" class="zoom-section">
         <div class="hero-content">
             <h1>Create Your Professional CV</h1>
@@ -30,7 +36,7 @@
             <a href="/login/login.html" class="cta-button">Get Started</a>
         </div>
     </section>
-    
+
     <section id="services" class="zoom-section">
         <h2 class="section-title">Our Services</h2>
         <div class="services-container">
@@ -48,31 +54,70 @@
             </div>
             <div class="service-box">
                 <img src="/imgs/Untitled-1 copy.png" alt="Job Posting" />
-                <h3>Post a Job</h3> <!-- blast had post job ach ban lik f orginize posting job z3ma i folowi jobs li posta lihom-->
+                <h3>Post a Job</h3>
+                <!-- blast had post job ach ban lik f orginize posting job z3ma i folowi jobs li posta lihom-->
             </div>
         </div>
     </section>
 
     <section id="about" class="zoom-section">
         <div class="section-content">
-            <h2 class="section-title">About Us</h2> <!-- 3rft 3mr hen b ach ban lik mais ach ban lik tkon sectio w7da khera ikono cliens ola templates -->
+            <h2 class="section-title">About Us</h2>
+            <!-- 3rft 3mr hen b ach ban lik mais ach ban lik tkon sectio w7da khera ikono cliens ola templates -->
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi unde nostrum a praesentium saepe dolore! Corporis corrupti voluptatem quis quos pariatur commodi animi possimus. Enim consequuntur aliquam nemo explicabo molestiae?</p>
         </div>
     </section>
 
-    <section id="contact" class="zoom-section">
-        <div class="section-content">
-            <h2 class="section-title">Contact Us</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel optio consequuntur amet saepe quaerat asperiores deleniti quod sint dignissimos placeat voluptatibus inventore iusto repellat mollitia ducimus recusandae corporis atque, perferendis eaque?</p>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="footer">
-            <h2> Footer o keda</h2>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2 class="logo-text">Pegasus</h2>
+                    <p>
+                        A brief description of your company. This can include your mission statement or a short overview of what you do.
+                    </p>
+                    <div class="contact">
+                        <span><i class="fas fa-phone"></i> &nbsp; 123-456-7890</span>
+                        <span><i class="fas fa-envelope"></i> &nbsp; info@companyname.com</span>
+                        <span><i class="fas fa-map-marker-alt"></i> &nbsp; 123 Street, City, Country</span>
+                    </div>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="#main"><i class="fas fa-angle-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-angle-right"></i> Services</a></li>
+                        <li><a href="#about"><i class="fas fa-angle-right"></i> About</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Terms</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contact-form">
+                    <h2>Contact Us</h2>
+                    <form action="#" method="post">
+                        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                        <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; 2025 Pegasus| All Rights Reserved | Designed by idk
+            </div>
         </div>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>
