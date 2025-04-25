@@ -202,6 +202,38 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize services animations
     initServicesAnimation();
 });
+// Function to initialize features animations
+function initFeaturesAnimation() {
+    // Get features container
+    const featuresContainer = document.querySelector('.features-container');
+    if (!featuresContainer) return;
+    
+    // Add stagger-in class
+    featuresContainer.classList.add('stagger-in');
+    
+    // Create observer to detect when features section is visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+    
+    // Observe features container
+    observer.observe(featuresContainer);
+}
+
+// Add this function call to your DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    // ... other initialization code
+    
+    // Initialize features animations
+    initFeaturesAnimation();
+});
 
 // Update active menu item based on scroll position
 function updateActiveMenuItem() {
