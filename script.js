@@ -170,6 +170,38 @@ function initSmoothScrolling() {
         });
     });
 }
+// Function to initialize services animations
+function initServicesAnimation() {
+    // Get services container
+    const servicesContainer = document.querySelector('.services-container');
+    if (!servicesContainer) return;
+    
+    // Add stagger-in class
+    servicesContainer.classList.add('stagger-in');
+    
+    // Create observer to detect when services section is visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+    
+    // Observe services container
+    observer.observe(servicesContainer);
+}
+
+// Add this function call to your DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    // ... other initialization code
+    
+    // Initialize services animations
+    initServicesAnimation();
+});
 
 // Update active menu item based on scroll position
 function updateActiveMenuItem() {
