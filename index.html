@@ -4,67 +4,285 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>AI CV Builder</title>
+    <title>AI Resume Builder</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <meta name="description" content="Create professional, ATS-optimized resumes with our AI-powered resume builder">
 </head>
 
 <body>
     <nav>
         <div class="nav-container">
-            <div class="logo">CV Builder</div>
+            <div class="logo"><i class="fas fa-file-alt"></i> AI Resume Builder</div>
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="menu-button">
                 <span></span>
             </label>
             <ul class="nav-menu">
-                <!-- ach ban lik ikono b7al Creatcv ou CVtemplates , -->
-                <li><a href="user-dashboard/index.html">Create CV</a></li>
-                <li><a href="#services">Our Services</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="user-dashboard/index.html"><i class="fas fa-plus-circle"></i> Create Resume</a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <section id="main" class="zoom-section">
-        <div class="hero-content">
-            <h1>Create Your Professional CV</h1>
-            <p>Find your dream job with our AI-powered CV tools</p>
-            <a href="login/login.html" class="cta-button">Get Started</a>
+        <div class="hero-container">
+            <div class="hero-content-left">
+                <h1>Create Your Professional Resume</h1>
+                <p>Land your dream job with our AI-powered resume builder that helps you stand out from the competition.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> ATS-optimized templates</li>
+                    <li><i class="fas fa-check-circle"></i> AI-powered content suggestions</li>
+                    <li><i class="fas fa-check-circle"></i> Keyword optimization for your industry</li>
+                    <li><i class="fas fa-check-circle"></i> Export as PDF, DOCX, or HTML</li>
+                </ul>
+                <div class="cta-buttons">
+                    <a href="user-dashboard/index.html" class="cta-button primary">Get Started</a>
+                    <a href="#services" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-content-right">
+                <div class="resume-preview">
+                    <div class="resume-header">
+                        <h2>John Doe</h2>
+                        <p>Software Engineer</p>
+                    </div>
+                    <div class="resume-section">
+                        <h3><i class="fas fa-briefcase"></i> Experience</h3>
+                        <div class="resume-item">
+                            <p class="item-title">Senior Developer</p>
+                            <p class="item-subtitle">Tech Solutions Inc. | 2020 - Present</p>
+                            <p class="item-desc">Led development of cloud-based applications...</p>
+                        </div>
+                    </div>
+                    <div class="resume-section">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div class="resume-item">
+                            <p class="item-title">BS Computer Science</p>
+                            <p class="item-subtitle">University of Technology | 2016 - 2020</p>
+                        </div>
+                    </div>
+                    <div class="resume-section">
+                        <h3><i class="fas fa-cogs"></i> Skills</h3>
+                        <div class="resume-skills">
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="zoom-section">
+        <div class="section-container">
+            <h2 class="section-title">Why Choose Our AI Resume Builder</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-robot feature-icon"></i>
+                    <h3>Smart Content Suggestions</h3>
+                    <p>Our AI analyzes your experience and suggests professional wording to highlight your achievements</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-search feature-icon"></i>
+                    <h3>ATS Optimization</h3>
+                    <p>Get higher scores with applicant tracking systems through keyword optimization</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-award feature-icon"></i>
+                    <h3>Professional Templates</h3>
+                    <p>Choose from multiple ATS-friendly templates designed by HR professionals</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-download feature-icon"></i>
+                    <h3>Multiple Export Options</h3>
+                    <p>Download your resume as PDF, DOCX, or HTML for different application requirements</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="services" class="zoom-section">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-container">
-            <div class="service-box">
-                <img src="imgs/unnamed.png" alt="AI CV Creation" />
-                <h3>Create your CV using AI</h3>
+        <div class="section-container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-container">
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>AI Resume Creation</h3>
+                    <p>Build professional resumes with intelligent content suggestions</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Job Search Tool</h3>
+                    <p>Find relevant job listings tailored to your skills and preferences</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Resume Analysis</h3>
+                    <p>Get detailed insights on how to improve your resume's performance</p>
+                </div>
+                <div class="service-box" id="application-tracker">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Application Tracker</h3>
+                    <p>Track and manage your job applications with status updates and reminders</p>
+                    
+                </div>
             </div>
-            <div class="service-box">
-                <img src="imgs/images.png" alt="Job Search" />
-                <h3>Find Jobs</h3>
+        </div>
+    </section>
+
+    <section id="stats" class="zoom-section">
+        <div class="stats-bg-overlay"></div>
+        <div class="section-container">
+            <h2 class="section-title">Our Impact By The Numbers</h2>
+            <p class="stats-subtitle">Our users report significant improvements in their job search success</p>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="35">0<span>%</span></div>
+                        <div class="stat-label">More Interview Invitations</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill" style="width: 35%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="28">0<span>%</span></div>
+                        <div class="stat-label">Faster Application-to-Interview Time</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill" style="width: 28%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="40">0<span>%</span></div>
+                        <div class="stat-label">Improvement in Resume Quality Scores</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="90">0<span>%</span></div>
+                        <div class="stat-label">Of Users Report More Confidence</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="service-box">
-                <img src="imgs/ser.png" alt="CV Analysis" />
-                <h3>CV Insights & Analyzer</h3>
-            </div>
-            <div class="service-box">
-                <img src="imgs/Untitled-1 copy.png" alt="Job Posting" />
-                <h3>Post a Job</h3>
-                <!-- blast had post job ach ban lik f orginize posting job z3ma i folowi jobs li posta lihom-->
+            
+            <div class="stats-cta">
+                <p>Join thousands of job seekers who have improved their career prospects</p>
+                <a href="user-dashboard/index.html" class="stats-button">Get Started Today</a>
             </div>
         </div>
     </section>
 
     <section id="about" class="zoom-section">
-        <div class="section-content">
+        <div class="about-container">
             <h2 class="section-title">About Us</h2>
-            <!-- 3rft 3mr hen b ach ban lik mais ach ban lik tkon sectio w7da khera ikono cliens ola templates -->
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi unde nostrum a praesentium saepe dolore! Corporis corrupti voluptatem quis quos pariatur commodi animi possimus. Enim consequuntur aliquam nemo explicabo molestiae?</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-card">
+                        <h3><i class="fas fa-users"></i> Our Mission</h3>
+                        <p>We're a team of career experts, HR professionals, and AI specialists dedicated to helping job seekers create impressive resumes that get results.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3><i class="fas fa-lightbulb"></i> Our Approach</h3>
+                        <p>Our AI-powered resume builder combines cutting-edge technology with proven resume strategies to give you the competitive edge in today's job market.</p>
+                    </div>
+                    <a href="#" class="text-button">Learn more about our team <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"This tool helped me land interviews at three top tech companies. The AI suggestions made my experience sound much more impressive!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <p class="author-name">Sarah K.</p>
+                                <p class="author-title">Software Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="zoom-section">
+        <div class="section-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@airesume.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Resume Street, Career City</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -72,21 +290,19 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section about">
-                    <h2 class="logo-text">Pegasus</h2>
+                    <h2 class="logo-text"><i class="fas fa-file-alt"></i> AI Resume Builder</h2>
                     <p>
-                        A brief description of your company. This can include your mission statement or a short overview of what you do.
+                        We help job seekers create professional, ATS-optimized resumes with the power of artificial intelligence.
                     </p>
                     <div class="contact">
-                        <span><i class="fas fa-phone"></i> &nbsp; 123-456-7890</span>
-                        <span><i class="fas fa-envelope"></i> &nbsp; info@companyname.com</span>
-                        <span><i class="fas fa-map-marker-alt"></i> &nbsp; 123 Street, City, Country</span>
+                        <span><i class="fas fa-phone"></i> &nbsp; +1 (555) 123-4567</span>
+                        <span><i class="fas fa-envelope"></i> &nbsp; info@airesume.com</span>
                     </div>
                     <div class="socials">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
@@ -94,25 +310,25 @@
                     <h2>Quick Links</h2>
                     <ul>
                         <li><a href="#main"><i class="fas fa-angle-right"></i> Home</a></li>
+                        <li><a href="#features"><i class="fas fa-angle-right"></i> Features</a></li>
                         <li><a href="#services"><i class="fas fa-angle-right"></i> Services</a></li>
                         <li><a href="#about"><i class="fas fa-angle-right"></i> About</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Terms</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Terms of Service</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section contact-form">
-                    <h2>Contact Us</h2>
+                    <h2>Subscribe to Our Newsletter</h2>
                     <form action="#" method="post">
-                        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-                        <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
-                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send</button>
+                        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Subscribe</button>
                     </form>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                &copy; 2025 Pegasus| All Rights Reserved | Designed by idk
+                &copy; 2025 AI Resume Builder | All Rights Reserved
             </div>
         </div>
     </footer>
