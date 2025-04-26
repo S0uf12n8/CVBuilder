@@ -234,6 +234,38 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize features animations
     initFeaturesAnimation();
 });
+// Function to initialize contact animations
+function initContactAnimation() {
+    // Get contact container
+    const contactContainer = document.querySelector('.contact-container');
+    if (!contactContainer) return;
+    
+    // Add stagger-in class
+    contactContainer.classList.add('stagger-in');
+    
+    // Create observer to detect when contact section is visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+    
+    // Observe contact container
+    observer.observe(contactContainer);
+}
+
+// Add this function call to your DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    // ... other initialization code
+    
+    // Initialize contact animations
+    initContactAnimation();
+});
 
 // Update active menu item based on scroll position
 function updateActiveMenuItem() {
