@@ -116,7 +116,7 @@ nav ul li a:hover {
 }
 
 /* Sections */
-./* Fix for section alignment */
+/* Fix for section alignment */
 .zoom-section {
     min-height: auto;
     padding: 6rem 0;
@@ -517,7 +517,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8Y29tcHV0ZXJ8ZW58MHx8fHwxNjkyMDUwNzM3fDA&ixlib=rb-4.0.3&q=80&w=1200');
+   * /* background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8Y29tcHV0ZXJ8ZW58MHx8fHwxNjkyMDUwNzM3fDA&ixlib=rb-4.0.3&q=80&w=1200'); */
     background-size: cover;
     background-position: center;
     opacity: 0.1;
@@ -704,7 +704,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8cmVzdW1lfGVufDB8fHx8MTY5MjA0OTAzNnww&ixlib=rb-4.0.3&q=80&w=1200');
+   /* background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8cmVzdW1lfGVufDB8fHx8MTY5MjA0OTAzNnww&ixlib=rb-4.0.3&q=80&w=1200');*/
     background-size: cover;
     background-position: center;
     opacity: 0.1;
@@ -1383,7 +1383,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1519337265831-281ec6cc8514?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8ZGFya3xlbnwwfHx8fDE2OTIwNjU0MzN8MA&ixlib=rb-4.0.3&q=80&w=1200');
+   /* background-image: url('https://images.unsplash.com/photo-1519337265831-281ec6cc8514?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8ZGFya3xlbnwwfHx8fDE2OTIwNjU0MzN8MA&ixlib=rb-4.0.3&q=80&w=1200');*/
     background-size: cover;
     background-position: center;
     opacity: 0.05;
