@@ -4,8 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="form-box login">
+            <form action="">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required >
+                    <i class='bx bxs-envelope'></i>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bx-lock-alt'></i>
+                </div>
+                <div class="forgot-link">
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p>or login with social platforms</p>
+                <div class="social-icons">
+                    <a href=""><i class='bx bxl-google' style="font-size: 20px; color: #333;"></i></a>
+                    <a href=""><i class='bx bxl-facebook'style="font-size: 20px; color: #333;" ></i></a>
+                    <a href=""><i class='bx bxl-github' style="font-size: 20px; color: #333;"></i></a>
+                    <a href=""><i class='bx bxl-linkedin' style="font-size: 20px; color: #333;" ></i></a>
+                </div>
+            </form>
+        </div>
+        <div class="form-box signup">
+            <form action="">
+                <h1>signup</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required >
+                    <i class='bx bxs-envelope'></i>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bx-lock-alt'></i>
+                </div>
+                <div class="forgot-link">
+                </div>
+                <button type="submit" class="btn">signup</button>
+                <p>or signup with social platforms</p>
+                <div class="social-icons">
+                    <a href=""><i class='bx bxl-google' style="font-size: 20px; color: #333;"></i></a>
+                    <a href=""><i class='bx bxl-facebook'style="font-size: 20px; color: #333;" ></i></a>
+                    <a href=""><i class='bx bxl-github' style="font-size: 20px; color: #333;"></i></a>
+                    <a href=""><i class='bx bxl-linkedin' style="font-size: 20px; color: #333;" ></i></a>
+                </div>
+            </form>
+        </div>
+        <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+                <h1>Hello, Welcome!</h1>
+                <p>Don't have an account?</p>
+                <button class="btn signup-btn">Sign Up</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+                <h1>Welcome back!</h1>
+                <p>Already have an account?</p>
+                <button class="btn login-btn">Login</button>
+            </div>
+        </div>
+        
+
+    </div>
+<script>
+    const container =document.querySelector('.container');
+    const signupBtn =document.querySelector('.signup-btn');
+    const loginBtn =document.querySelector('.login-btn');
+
+    signupBtn.addEventListener('click', () =>{
+        container.classList.add('active');
+    });
+    loginBtn.addEventListener('click', () =>{
+        container.classList.remove('active');
+    });
+</script>
 </body>
 </html>
