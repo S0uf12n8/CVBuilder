@@ -620,6 +620,7 @@ nav ul li a.active {
 }
 /* Features section */
 /* Features Section - Redesigned to match Stats/Services sections */
+/* Features Section - Improved Layout to match Services */
 #features {
     background-color: #003049;
     color: white;
@@ -633,7 +634,6 @@ nav ul li a.active {
     left: 0;
     width: 100%;
     height: 100%;
-   * /* background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8Y29tcHV0ZXJ8ZW58MHx8fHwxNjkyMDUwNzM3fDA&ixlib=rb-4.0.3&q=80&w=1200'); */
     background-size: cover;
     background-position: center;
     opacity: 0.1;
@@ -649,13 +649,14 @@ nav ul li a.active {
 }
 
 #features .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     color: white;
     background: linear-gradient(135deg, #00a8e8, #00cdac);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
-    margin-bottom: 1rem;
 }
 
 .features-subtitle {
@@ -665,10 +666,12 @@ nav ul li a.active {
     margin-bottom: 4rem;
 }
 
-.features-container {
+/* New grid layout for more even appearance */
+.features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .feature-card {
@@ -682,6 +685,8 @@ nav ul li a.active {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.05);
     height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .feature-card:hover {
@@ -689,40 +694,48 @@ nav ul li a.active {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
-.feature-icon {
-    font-size: 2.5rem;
-    color: #00a8e8;
-    margin-bottom: 1.5rem;
-    text-align: center;
+/* Improved feature card layout */
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
 }
 
-.feature-content {
-    text-align: center;
-    flex: 1;
+.feature-icon {
+    font-size: 2rem;
+    color: #00a8e8;
+    width: 50px;
+    height: 50px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
 }
 
 .feature-name {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     background: linear-gradient(135deg, #00a8e8, #00cdac);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
+    margin: 0;
+}
+
+.feature-content {
+    flex: 1;
 }
 
 .feature-description {
     font-size: 1rem;
+    line-height: 1.6;
     color: white;
     margin-bottom: 1.5rem;
-    line-height: 1.5;
-    flex-grow: 1;
 }
 
+/* Accent bar at bottom of card */
 .feature-accent {
     width: 100%;
     height: 6px;
@@ -737,10 +750,27 @@ nav ul li a.active {
     background: linear-gradient(to right, #00a8e8, #00cdac);
     border-radius: 3px;
     width: 0;
-    transition: none;
-    animation: none;
+    transition: width 2s ease-in-out;
 }
 
+/* Each card gets a different width accent fill */
+.feature-card:nth-child(1) .feature-accent-fill {
+    width: 95%;
+}
+
+.feature-card:nth-child(2) .feature-accent-fill {
+    width: 80%;
+}
+
+.feature-card:nth-child(3) .feature-accent-fill {
+    width: 85%;
+}
+
+.feature-card:nth-child(4) .feature-accent-fill {
+    width: 90%;
+}
+
+/* CTA section */
 .features-cta {
     margin-top: 3rem;
     text-align: center;
@@ -769,25 +799,11 @@ nav ul li a.active {
     box-shadow: 0 8px 20px rgba(0, 168, 232, 0.5);
 }
 
-/* Animation for feature accent bars */
-.features-container.stagger-in.active .feature-card:nth-child(1) .feature-accent-fill {
-    width: 95%;
-    transition-delay: 0.5s;
-}
-
-.features-container.stagger-in.active .feature-card:nth-child(2) .feature-accent-fill {
-    width: 80%;
-    transition-delay: 0.7s;
-}
-
-.features-container.stagger-in.active .feature-card:nth-child(3) .feature-accent-fill {
-    width: 85%;
-    transition-delay: 0.9s;
-}
-
-.features-container.stagger-in.active .feature-card:nth-child(4) .feature-accent-fill {
-    width: 90%;
-    transition-delay: 1.1s;
+/* Responsive design */
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Services section */
