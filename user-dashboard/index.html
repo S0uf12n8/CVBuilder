@@ -4,298 +4,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Resume Builder</title>
+    <title>User Dashboard - AI Resume Builder</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="app-container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <div class="logo">
-                <i class="fas fa-file-alt"></i>
-                <h2>Resume Builder</h2>
+    <div class="dashboard-container">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <div class="welcome-section">
+                <div class="user-avatar">JS</div>
+                <div>
+                    <h2>Welcome back, John Smith</h2>
+                    <p>Last login: April 27, 2025, 10:30 AM</p>
+                </div>
             </div>
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progress-fill"></div>
+            <button class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="quick-stats">
+            <div class="stat-box resumes">
+                <div class="stat-icon">
+                    <i class="fas fa-file-alt"></i>
                 </div>
-                <span id="progress-text">0% Complete</span>
+                <div class="stat-count">3</div>
+                <div class="stat-title">Resumes Created</div>
             </div>
-            <nav class="nav-menu">
-                <ul>
-                    <li class="nav-item active" data-section="heading">
-                        <span class="step-number">1</span>
-                        <span class="step-text">Heading Information</span>
-                        <i class="fas fa-check step-complete"></i>
-                    </li>
-                    <li class="nav-item" data-section="education">
-                        <span class="step-number">2</span>
-                        <span class="step-text">Education</span>
-                        <i class="fas fa-check step-complete"></i>
-                    </li>
-                    <li class="nav-item" data-section="experience">
-                        <span class="step-number">3</span>
-                        <span class="step-text">Work Experience</span>
-                        <i class="fas fa-check step-complete"></i>
-                    </li>
-                    <li class="nav-item" data-section="skills">
-                        <span class="step-number">4</span>
-                        <span class="step-text">Skills</span>
-                        <i class="fas fa-check step-complete"></i>
-                    </li>
-                    <li class="nav-item" data-section="summary">
-                        <span class="step-number">5</span>
-                        <span class="step-text">Summary</span>
-                        <i class="fas fa-check step-complete"></i>
-                    </li>
-                    <li class="nav-item" data-section="review">
-                        <span class="step-number">6</span>
-                        <span class="step-text">Final Review</span>
-                        <i class="fas fa-check step-complete"></i>
-                    </li>
-                </ul>
-            </nav>
-            <div class="sidebar-footer">
-                <button id="save-draft" class="btn btn-secondary">
-                    <i class="fas fa-save"></i> Save Draft
-                </button>
+            <div class="stat-box applications">
+                <div class="stat-icon">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+                <div class="stat-count">12</div>
+                <div class="stat-title">Applications Sent</div>
             </div>
-        </aside>
+            <div class="stat-box interviews">
+                <div class="stat-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="stat-count">2</div>
+                <div class="stat-title">Interviews Scheduled</div>
+            </div>
+            <div class="stat-box views">
+                <div class="stat-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="stat-count">47</div>
+                <div class="stat-title">Resume Views</div>
+            </div>
+        </div>
 
-        <!-- Main Content Area -->
-        <main class="content-area">
-            <header class="content-header">
-                <h1 id="section-title">Heading Information</h1>
-                <div class="actions">
-                    <button id="preview-btn" class="btn btn-secondary">
-                        <i class="fas fa-eye"></i> Preview
-                    </button>
+        <h2>Your Services</h2>
+        <div class="services-grid">
+            <!-- Server Status Card -->
+            <div class="service-card">
+                <div class="service-card-header server">
+                    <div class="card-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Our Servers</h3>
+                    <p>System status and performance</p>
                 </div>
-            </header>
+                <div class="service-card-body">
+                    <div class="server-status-list">
+                        <div class="server-status-item">
+                            <span><span class="status-indicator status-online"></span> Resume Builder</span>
+                            <span>100% Uptime</span>
+                        </div>
+                        <div class="server-status-item">
+                            <span><span class="status-indicator status-online"></span> Job Search API</span>
+                            <span>99.8% Uptime</span>
+                        </div>
+                        <div class="server-status-item">
+                            <span><span class="status-indicator status-maintenance"></span> AI Analysis</span>
+                            <span>Maintenance</span>
+                        </div>
+                        <div class="server-status-item">
+                            <span><span class="status-indicator status-online"></span> Document Storage</span>
+                            <span>100% Uptime</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card-footer">
+                    <a href="#" class="card-btn server">View Status Details</a>
+                </div>
+            </div>
 
-            <!-- Section: Heading Information -->
-            <section id="heading" class="section-content active">
-                <div class="form-container">
-                    <div class="input-group">
-                        <label for="full-name">Full Name</label>
-                        <input type="text" id="full-name" name="full-name" placeholder="e.g. John Smith">
+            <!-- Resume Creation Card -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-file-alt"></i>
                     </div>
-                    <div class="input-group">
-                        <label for="job-title">Job Title</label>
-                        <input type="text" id="job-title" name="job-title" placeholder="e.g. Software Developer">
-                    </div>
-                    <div class="input-row">
-                        <div class="input-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="e.g. john@example.com">
+                    <h3>Resume Creation</h3>
+                    <p>Build and manage your resumes</p>
+                </div>
+                <div class="service-card-body">
+                    <p>Create professionally designed resumes with our AI-powered tools. Tailor your content to specific job listings and export in multiple formats.</p>
+                    <div class="service-stats">
+                        <div class="stat">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Resumes</div>
                         </div>
-                        <div class="input-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="e.g. (555) 123-4567">
+                        <div class="stat">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">Templates</div>
                         </div>
-                    </div>
-                    <div class="input-row">
-                        <div class="input-group">
-                            <label for="location">Location</label>
-                            <input type="text" id="location" name="location" placeholder="e.g. New York, NY">
-                        </div>
-                        <div class="input-group">
-                            <label for="website">Website/LinkedIn (Optional)</label>
-                            <input type="url" id="website" name="website" placeholder="e.g. linkedin.com/in/johnsmith">
+                        <div class="stat">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Versions</div>
                         </div>
                     </div>
                 </div>
-                <div class="section-nav">
-                    <button class="btn btn-primary next-btn" data-next="education">Next: Education</button>
+                <div class="service-card-footer">
+                    <a href="resume-builder.html" class="card-btn">Create or Edit Resume</a>
                 </div>
-            </section>
+            </div>
 
-            <!-- Section: Education -->
-            <section id="education" class="section-content">
-                <div class="form-container">
-                    <div id="education-entries">
-                        <div class="education-entry">
-                            <h3>Degree #1</h3>
-                            <div class="input-group">
-                                <label for="school-name">School Name</label>
-                                <input type="text" name="school-name" placeholder="e.g. University of California">
-                            </div>
-                            <div class="input-row">
-                                <div class="input-group">
-                                    <label for="degree">Degree</label>
-                                    <input type="text" name="degree" placeholder="e.g. Bachelor of Science">
-                                </div>
-                                <div class="input-group">
-                                    <label for="field-of-study">Field of Study</label>
-                                    <input type="text" name="field-of-study" placeholder="e.g. Computer Science">
-                                </div>
-                            </div>
-                            <div class="input-row">
-                                <div class="input-group">
-                                    <label for="edu-start-date">Start Date</label>
-                                    <input type="month" name="edu-start-date">
-                                </div>
-                                <div class="input-group">
-                                    <label for="edu-end-date">End Date</label>
-                                    <input type="month" name="edu-end-date">
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label for="achievements">Achievements/Activities (Optional)</label>
-                                <textarea name="achievements" rows="3" placeholder="e.g. Dean's List, Relevant Coursework, etc."></textarea>
-                            </div>
+            <!-- Job Search Card -->
+            <div class="service-card">
+                <div class="service-card-header job-search">
+                    <div class="card-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Job Search Tool</h3>
+                    <p>Find jobs matching your skills</p>
+                </div>
+                <div class="service-card-body">
+                    <p>Discover job opportunities tailored to your skills and experience. Set up alerts for new postings that match your criteria.</p>
+                    <div class="service-stats">
+                        <div class="stat">
+                            <div class="stat-value">28</div>
+                            <div class="stat-label">Matches</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Searches</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Alerts</div>
                         </div>
                     </div>
-                    <button id="add-education" class="btn btn-secondary">
-                        <i class="fas fa-plus"></i> Add Another Education
-                    </button>
                 </div>
-                <div class="section-nav">
-                    <button class="btn btn-secondary prev-btn" data-prev="heading">Previous</button>
-                    <button class="btn btn-primary next-btn" data-next="experience">Next: Work Experience</button>
+                <div class="service-card-footer">
+                    <a href="../services/job-search/index.html" class="card-btn job-search">Search Jobs</a>
                 </div>
-            </section>
+            </div>
 
-            <!-- Section: Work Experience -->
-            <section id="experience" class="section-content">
-                <div class="form-container">
-                    <div id="experience-entries">
-                        <div class="experience-entry">
-                            <h3>Experience #1</h3>
-                            <div class="input-group">
-                                <label for="company-name">Company</label>
-                                <input type="text" name="company-name" placeholder="e.g. Acme Corporation">
-                            </div>
-                            <div class="input-row">
-                                <div class="input-group">
-                                    <label for="job-position">Position</label>
-                                    <input type="text" name="job-position" placeholder="e.g. Senior Developer">
-                                </div>
-                                <div class="input-group">
-                                    <label for="job-location">Location</label>
-                                    <input type="text" name="job-location" placeholder="e.g. San Francisco, CA">
-                                </div>
-                            </div>
-                            <div class="input-row">
-                                <div class="input-group">
-                                    <label for="job-start-date">Start Date</label>
-                                    <input type="month" name="job-start-date">
-                                </div>
-                                <div class="input-group">
-                                    <label for="job-end-date">End Date</label>
-                                    <input type="month" name="job-end-date">
-                                    <div class="checkbox-group">
-                                        <input type="checkbox" id="current-job" name="current-job">
-                                        <label for="current-job">I currently work here</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label for="job-description">Description</label>
-                                <textarea name="job-description" rows="4" placeholder="Describe your responsibilities and achievements"></textarea>
-                            </div>
+            <!-- Application Tracker Card -->
+            <div class="service-card">
+                <div class="service-card-header app-tracker">
+                    <div class="card-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Application Tracker</h3>
+                    <p>Manage your job applications</p>
+                </div>
+                <div class="service-card-body">
+                    <p>Keep track of your job applications, follow-ups, and responses. Set reminders for interviews and next steps.</p>
+                    <div class="service-stats">
+                        <div class="stat">
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Applications</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">Interviews</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Pending</div>
                         </div>
                     </div>
-                    <button id="add-experience" class="btn btn-secondary">
-                        <i class="fas fa-plus"></i> Add Another Experience
-                    </button>
                 </div>
-                <div class="section-nav">
-                    <button class="btn btn-secondary prev-btn" data-prev="education">Previous</button>
-                    <button class="btn btn-primary next-btn" data-next="skills">Next: Skills</button>
+                <div class="service-card-footer">
+                    <a href="#" class="card-btn app-tracker">Manage Applications</a>
                 </div>
-            </section>
+            </div>
 
-            <!-- Section: Skills -->
-            <section id="skills" class="section-content">
-                <div class="form-container">
-                    <div class="input-group">
-                        <label for="skill-categories">Skills Categories</label>
-                        <p class="form-hint">Add categories like Technical Skills, Languages, Tools, etc.</p>
-                        <div id="skill-categories">
-                            <div class="skill-category">
-                                <input type="text" name="category-name" placeholder="Category name (e.g. Technical Skills)">
-                                <div class="skill-tags">
-                                    <div class="skill-tag-input">
-                                        <input type="text" placeholder="Type a skill and press Enter">
-                                    </div>
-                                    <div class="skill-tags-container">
-                                        <span class="skill-tag">JavaScript<button class="remove-tag">×</button></span>
-                                        <span class="skill-tag">HTML<button class="remove-tag">×</button></span>
-                                        <span class="skill-tag">CSS<button class="remove-tag">×</button></span>
-                                    </div>
-                                </div>
-                            </div>
+            <!-- Interview Preparation Card -->
+            <div class="service-card">
+                <div class="service-card-header interview">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Interview Preparation</h3>
+                    <p>Practice and prepare for interviews</p>
+                </div>
+                <div class="service-card-body">
+                    <p>Get ready for your interviews with practice questions, AI-powered feedback, and industry-specific guides to boost your confidence.</p>
+                    <div class="service-stats">
+                        <div class="stat">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Practice Sessions</div>
                         </div>
-                    </div>
-                    <button id="add-skill-category" class="btn btn-secondary">
-                        <i class="fas fa-plus"></i> Add Another Skill Category
-                    </button>
-                </div>
-                <div class="section-nav">
-                    <button class="btn btn-secondary prev-btn" data-prev="experience">Previous</button>
-                    <button class="btn btn-primary next-btn" data-next="summary">Next: Summary</button>
-                </div>
-            </section>
-
-            <!-- Section: Summary -->
-            <section id="summary" class="section-content">
-                <div class="form-container">
-                    <div class="input-group">
-                        <label for="professional-summary">Professional Summary</label>
-                        <p class="form-hint">Write a brief summary highlighting your qualifications, experience, and career goals (recommended: 3-5 sentences)</p>
-                        <textarea id="professional-summary" name="professional-summary" rows="6" placeholder="e.g. Detail-oriented software developer with 5+ years of experience in developing web applications..."></textarea>
-                    </div>
-                </div>
-                <div class="section-nav">
-                    <button class="btn btn-secondary prev-btn" data-prev="skills">Previous</button>
-                    <button class="btn btn-primary next-btn" data-next="review">Next: Final Review</button>
-                </div>
-            </section>
-
-            <!-- Section: Final Review -->
-            <section id="review" class="section-content">
-                <div class="review-container">
-                    <div class="resume-preview">
-                        <h3>Resume Preview</h3>
-                        <div id="resume-preview-content">
-                            <!-- Preview content will be populated by JavaScript -->
-                            <div class="preview-placeholder">
-                                <i class="fas fa-spinner fa-pulse"></i>
-                                <p>Loading preview...</p>
-                            </div>
+                        <div class="stat">
+                            <div class="stat-value">42</div>
+                            <div class="stat-label">Questions</div>
                         </div>
-                    </div>
-                    <div class="download-options">
-                        <h3>Download Options</h3>
-                        <div class="button-group">
-                            <button class="btn btn-primary">
-                                <i class="fas fa-download"></i> Download PDF
-                            </button>
-                            <button class="btn btn-secondary">
-                                <i class="fas fa-file-word"></i> Download DOCX
-                            </button>
-                            <button class="btn btn-secondary">
-                                <i class="fas fa-code"></i> Export HTML
-                            </button>
+                        <div class="stat">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">Mock Interviews</div>
                         </div>
                     </div>
                 </div>
-                <div class="section-nav">
-                    <button class="btn btn-secondary prev-btn" data-prev="summary">Previous</button>
-                    <button class="btn btn-success" id="finish-btn">
-                        <i class="fas fa-check-circle"></i> Finish
-                    </button>
+                <div class="service-card-footer">
+                    <a href="#" class="card-btn interview">Start Practice</a>
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
     </div>
-    <script src="/user-dashboard/js/navigation.js"></script>
-    <script src="/user-dashboard/js/storage.js"></script>
-    <script src="/user-dashboard/js/validation.js"></script>
-    <script src="/user-dashboard/js/app.js"></script>
+
+    <script>
+        // Simple JavaScript for logout functionality
+        document.querySelector('.logout-btn').addEventListener('click', function() {
+            // In a real application, this would handle the logout process
+            window.location.href = '../index.html';
+        });
+
+        // Redirect to resume builder
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create a link to the existing resume builder page
+            const resumeBuilderLink = document.querySelector('.service-card:nth-child(2) .card-btn');
+            resumeBuilderLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = 'resume-builder.html';
+            });
+        });
+    </script>
 </body>
 
 </html>

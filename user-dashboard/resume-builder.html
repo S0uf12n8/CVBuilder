@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder - AI Resume Builder</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="builder-container">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <h2>Resume Builder</h2>
+            <button class="back-button" id="backToDashboard">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </button>
+        </div>
+
+        <!-- Resume Options -->
+        <div class="resume-options">
+            <div class="resume-option-card">
+                <div class="resume-option-header create-new">
+                    <div class="option-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h3>Create New Resume</h3>
+                </div>
+                <div class="resume-option-body">
+                    <p>Start fresh with a new resume. Our step-by-step guide will help you create a professional resume tailored to your career goals.</p>
+                    <a href="index-orig.html" class="resume-option-btn create-new">Create New Resume</a>
+                </div>
+            </div>
+
+            <div class="resume-option-card">
+                <div class="resume-option-header edit-existing">
+                    <div class="option-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Edit Existing Resume</h3>
+                </div>
+                <div class="resume-option-body">
+                    <p>Modify one of your existing resumes to update information or tailor it for a specific job application.</p>
+                    <a href="#recent-resumes" class="resume-option-btn edit-existing">Choose a Resume</a>
+                </div>
+            </div>
+
+            <div class="resume-option-card">
+                <div class="resume-option-header">
+                    <div class="option-icon">
+                        <i class="fas fa-file-import"></i>
+                    </div>
+                    <h3>Import Resume</h3>
+                </div>
+                <div class="resume-option-body">
+                    <p>Upload an existing resume in PDF or DOCX format. Our AI will analyze it and convert it to our editable format.</p>
+                    <a href="#" class="resume-option-btn">Upload Resume</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Resumes -->
+        <div class="recent-resumes" id="recent-resumes">
+            <h3>Your Recent Resumes</h3>
+            <div class="resume-list">
+                <div class="resume-card">
+                    <div class="resume-card-header">
+                        <div class="resume-title">Software Developer Resume</div>
+                        <div class="resume-date">Last edited: April 24, 2025</div>
+                    </div>
+                    <div class="resume-info">
+                        <div>Template: Modern Professional</div>
+                        <div>Applications: 3</div>
+                    </div>
+                    <div class="resume-actions">
+                        <button class="resume-action-btn edit">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="resume-action-btn">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                        <button class="resume-action-btn">
+                            <i class="fas fa-copy"></i> Duplicate
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resume-card">
+                    <div class="resume-card-header">
+                        <div class="resume-title">Project Manager CV</div>
+                        <div class="resume-date">Last edited: April 15, 2025</div>
+                    </div>
+                    <div class="resume-info">
+                        <div>Template: Executive</div>
+                        <div>Applications: 5</div>
+                    </div>
+                    <div class="resume-actions">
+                        <button class="resume-action-btn edit">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="resume-action-btn">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                        <button class="resume-action-btn">
+                            <i class="fas fa-copy"></i> Duplicate
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resume-card">
+                    <div class="resume-card-header">
+                        <div class="resume-title">UX Designer Portfolio</div>
+                        <div class="resume-date">Last edited: April 10, 2025</div>
+                    </div>
+                    <div class="resume-info">
+                        <div>Template: Creative</div>
+                        <div>Applications: 4</div>
+                    </div>
+                    <div class="resume-actions">
+                        <button class="resume-action-btn edit">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="resume-action-btn">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                        <button class="resume-action-btn">
+                            <i class="fas fa-copy"></i> Duplicate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript for navigation
+        document.getElementById('backToDashboard').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+
+        // Handle edit buttons for existing resumes
+        document.querySelectorAll('.resume-action-btn.edit').forEach(function(button) {
+            button.addEventListener('click', function() {
+                window.location.href = 'index-orig.html';
+            });
+        });
+    </script>
+</body>
+
+</html>
