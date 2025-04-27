@@ -58,7 +58,7 @@
                         </div>
                         <div class="template-option" data-template="simple">
                             <div class="template-preview">
-                                <img src="../../imgs/template-simple.png" alt="Simple Template">
+                                <img src="../../imgs/template-simple.jpg" alt="Simple Template">
                             </div>
                             <span>Simple</span>
                         </div>
@@ -171,6 +171,387 @@
                     </div>
                     <div class="form-actions">
                         <button class="btn primary next-section">Next: Professional Summary</button>
+                    </div>
+                </div>
+
+                <!-- Professional Summary Section -->
+                <div class="form-section" id="summary-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-align-left"></i> Professional Summary</h2>
+                        <p>Write a brief overview of your professional background</p>
+                    </div>
+                    <div class="form-fields">
+                        <div class="form-group">
+                            <label for="professional-summary">Professional Summary</label>
+                            <textarea id="professional-summary" rows="6" placeholder="e.g., Motivated software developer with 5+ years of experience in developing web applications..."></textarea>
+                        </div>
+                        <div class="ai-suggestion">
+                            <button class="btn secondary" id="generate-summary">
+                                <i class="fas fa-robot"></i>
+                                <span>Generate with AI</span>
+                            </button>
+                            <p class="suggestion-tip">Our AI can help you craft a compelling summary based on your experience</p>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn secondary prev-section">Previous: Personal Information</button>
+                        <button class="btn primary next-section">Next: Work Experience</button>
+                    </div>
+                </div>
+
+                <!-- Work Experience Section -->
+                <div class="form-section" id="experience-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+                        <p>Add your work history, starting with the most recent position</p>
+                    </div>
+                    <div class="form-fields">
+                        <div id="experience-entries">
+                            <div class="experience-entry">
+                                <div class="entry-header">
+                                    <h3>Experience 1</h3>
+                                    <button class="btn icon-only remove-entry" title="Remove Entry">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="job-title-1">Job Title</label>
+                                        <input type="text" id="job-title-1" placeholder="e.g., Senior Developer">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="employer-1">Employer</label>
+                                        <input type="text" id="employer-1" placeholder="e.g., Tech Solutions Inc.">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="job-start-date-1">Start Date</label>
+                                        <input type="month" id="job-start-date-1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="job-end-date-1">End Date</label>
+                                        <input type="month" id="job-end-date-1">
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="current-job-1">
+                                            <label for="current-job-1">I currently work here</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="job-location-1">Location</label>
+                                    <input type="text" id="job-location-1" placeholder="e.g., San Francisco, CA">
+                                </div>
+                                <div class="form-group">
+                                    <label for="job-description-1">Description</label>
+                                    <textarea id="job-description-1" rows="4" placeholder="Describe your responsibilities, achievements, and the technologies you used..."></textarea>
+                                </div>
+                                <div class="ai-suggestion">
+                                    <button class="btn secondary" id="enhance-experience-1">
+                                        <i class="fas fa-robot"></i>
+                                        <span>Enhance with AI</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn secondary add-entry" id="add-experience">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Another Position</span>
+                        </button>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn secondary prev-section">Previous: Professional Summary</button>
+                        <button class="btn primary next-section">Next: Education</button>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="form-section" id="education-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                        <p>Add your educational background, starting with the most recent</p>
+                    </div>
+                    <div class="form-fields">
+                        <div id="education-entries">
+                            <div class="education-entry">
+                                <div class="entry-header">
+                                    <h3>Education 1</h3>
+                                    <button class="btn icon-only remove-entry" title="Remove Entry">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="degree-1">Degree</label>
+                                        <input type="text" id="degree-1" placeholder="e.g., Bachelor of Science in Computer Science">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="institution-1">Institution</label>
+                                        <input type="text" id="institution-1" placeholder="e.g., University of Technology">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="edu-start-date-1">Start Date</label>
+                                        <input type="month" id="edu-start-date-1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="edu-end-date-1">End Date</label>
+                                        <input type="month" id="edu-end-date-1">
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="current-edu-1">
+                                            <label for="current-edu-1">I'm currently studying here</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="edu-location-1">Location</label>
+                                    <input type="text" id="edu-location-1" placeholder="e.g., Boston, MA">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gpa-1">GPA (Optional)</label>
+                                    <input type="text" id="gpa-1" placeholder="e.g., 3.8/4.0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edu-description-1">Additional Information</label>
+                                    <textarea id="edu-description-1" rows="3" placeholder="e.g., Relevant coursework, academic achievements, honors..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn secondary add-entry" id="add-education">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Another Education</span>
+                        </button>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn secondary prev-section">Previous: Work Experience</button>
+                        <button class="btn primary next-section">Next: Skills</button>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="form-section" id="skills-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-tools"></i> Skills</h2>
+                        <p>Add your technical and professional skills</p>
+                    </div>
+                    <div class="form-fields">
+                        <div class="form-group">
+                            <label>Skill Categories</label>
+                            <p class="helper-text">Group your skills into categories for better organization</p>
+                            
+                            <div id="skill-categories">
+                                <div class="skill-category">
+                                    <div class="category-header">
+                                        <input type="text" class="category-name" placeholder="e.g., Programming Languages">
+                                        <button class="btn icon-only remove-category" title="Remove Category">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                    <div class="skills-container">
+                                        <div class="skill-tag">
+                                            <span>JavaScript</span>
+                                            <button class="remove-skill"><i class="fas fa-times"></i></button>
+                                        </div>
+                                        <div class="skill-tag">
+                                            <span>HTML/CSS</span>
+                                            <button class="remove-skill"><i class="fas fa-times"></i></button>
+                                        </div>
+                                        <div class="skill-tag">
+                                            <span>React</span>
+                                            <button class="remove-skill"><i class="fas fa-times"></i></button>
+                                        </div>
+                                        <input type="text" class="add-skill-input" placeholder="Type a skill and press Enter">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn secondary" id="add-skill-category">
+                                <i class="fas fa-plus"></i>
+                                <span>Add Another Category</span>
+                            </button>
+                        </div>
+                        
+                        <div class="ai-suggestion">
+                            <button class="btn secondary" id="suggest-skills">
+                                <i class="fas fa-robot"></i>
+                                <span>Suggest Skills with AI</span>
+                            </button>
+                            <p class="suggestion-tip">Based on your experience, our AI can suggest relevant skills for your target role</p>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn secondary prev-section">Previous: Education</button>
+                        <button class="btn primary next-section">Next: Certifications</button>
+                    </div>
+                </div>
+
+                <!-- Certifications Section -->
+                <div class="form-section" id="certifications-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-certificate"></i> Certifications</h2>
+                        <p>Add relevant certifications and professional qualifications</p>
+                    </div>
+                    <div class="form-fields">
+                        <div id="certification-entries">
+                            <div class="certification-entry">
+                                <div class="entry-header">
+                                    <h3>Certification 1</h3>
+                                    <button class="btn icon-only remove-entry" title="Remove Entry">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cert-name-1">Certification Name</label>
+                                    <input type="text" id="cert-name-1" placeholder="e.g., AWS Certified Solutions Architect">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="issuing-org-1">Issuing Organization</label>
+                                        <input type="text" id="issuing-org-1" placeholder="e.g., Amazon Web Services">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cert-date-1">Date Issued</label>
+                                        <input type="month" id="cert-date-1">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiration-date-1">Expiration Date (Optional)</label>
+                                        <input type="month" id="expiration-date-1">
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="no-expiration-1">
+                                            <label for="no-expiration-1">No expiration date</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="credential-id-1">Credential ID (Optional)</label>
+                                        <input type="text" id="credential-id-1" placeholder="e.g., ABC123456">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="credential-url-1">Credential URL (Optional)</label>
+                                    <input type="url" id="credential-url-1" placeholder="e.g., https://www.credential-verification.com/123">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn secondary add-entry" id="add-certification">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Another Certification</span>
+                        </button>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn secondary prev-section">Previous: Skills</button>
+                        <button class="btn primary next-section">Next: Languages</button>
+                    </div>
+                </div>
+
+                <!-- Languages Section -->
+                <div class="form-section" id="languages-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-language"></i> Languages</h2>
+                        <p>Add languages you speak and your proficiency level</p>
+                    </div>
+                    <div class="form-fields">
+                        <div id="language-entries">
+                            <div class="language-entry">
+                                <div class="entry-header">
+                                    <h3>Language 1</h3>
+                                    <button class="btn icon-only remove-entry" title="Remove Entry">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="language-name-1">Language</label>
+                                        <input type="text" id="language-name-1" placeholder="e.g., Spanish">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="proficiency-1">Proficiency Level</label>
+                                        <select id="proficiency-1">
+                                            <option value="">Select proficiency</option>
+                                            <option value="Native">Native</option>
+                                            <option value="Fluent">Fluent</option>
+                                            <option value="Advanced">Advanced</option>
+                                            <option value="Intermediate">Intermediate</option>
+                                            <option value="Basic">Basic</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="language-details-1">Additional Details (Optional)</label>
+                                    <input type="text" id="language-details-1" placeholder="e.g., TOEFL score, years studied, etc.">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn secondary add-entry" id="add-language">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Another Language</span>
+                        </button>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn secondary prev-section">Previous: Certifications</button>
+                        <button class="btn primary next-section">Next: Projects</button>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="form-section" id="projects-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+                        <p>Add relevant projects that showcase your skills and expertise</p>
+                    </div>
+                    <div class="form-fields">
+                        <div id="project-entries">
+                            <div class="project-entry">
+                                <div class="entry-header">
+                                    <h3>Project 1</h3>
+                                    <button class="btn icon-only remove-entry" title="Remove Entry">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="form-group">
+                                    <label for="project-title-1">Project Title</label>
+                                    <input type="text" id="project-title-1" placeholder="e.g., E-commerce Website Redesign">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="project-role-1">Your Role (Optional)</label>
+                                        <input type="text" id="project-role-1" placeholder="e.g., Lead Developer">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="project-date-1">Date</label>
+                                        <input type="month" id="project-date-1">
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="ongoing-project-1">
+                                            <label for="ongoing-project-1">Ongoing project</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="project-url-1">Project URL (Optional)</label>
+                                    <input type="url" id="project-url-1" placeholder="e.g., https://github.com/yourusername/project">
+                                </div>
+                                <div class="form-group">
+                                    <label for="project-description-1">Description</label>
+                                    <textarea id="project-description-1" rows="4" placeholder="Describe the project, your contributions, technologies used, and outcomes..."></textarea>
+                                </div>
+                                <div class="ai-suggestion">
+                                    <button class="btn secondary" id="enhance-project-1">
+                                        <i class="fas fa-robot"></i>
+                                        <span>Enhance with AI</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn secondary add-entry" id="add-project">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Another Project</span>
+                        </button>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn secondary prev-section">Previous: Languages</button>
+                        <button class="btn primary" id="finalize-resume">Finalize Resume</button>
                     </div>
                 </div>
 
