@@ -1,143 +1,65 @@
 // Simplified functions for exporting resume to different formats
+// Using jsPDF library for proper PDF generation
 
 // Function to export resume as PDF
 function exportToPDF() {
     // Show message
     alert("Preparing your PDF download...");
     
-    // Get resume data
+    // Check if jsPDF is loaded, if not, load it dynamically
+    if (typeof jsPDF === 'undefined') {
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+        script.onload = function() {
+            const scriptHtml2Canvas = document.createElement('script');
+            scriptHtml2Canvas.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+            scriptHtml2Canvas.onload = generatePDF;
+            document.head.appendChild(scriptHtml2Canvas);
+        };
+        document.head.appendChild(script);
+    } else {
+        generatePDF();
+    }
+}
+
+// Function that actually generates the PDF
+function generatePDF() {
+    // Get the resume preview element
+    updateResumePreview(); // Make sure preview is up to date
+    const resumeElement = document.getElementById('resume-preview-content');
     const name = resumeData.heading.fullName || 'Candidate';
-    const jobTitle = resumeData.heading.jobTitle || 'Professional';
-    const email = resumeData.heading.email || '';
-    const phone = resumeData.heading.phone || '';
-    const location = resumeData.heading.location || '';
-    const summary = resumeData.summary.professionalSummary || '';
     
-    // Create PDF content as HTML
-    let pdfContent = `
-        <div class="resume-pdf" style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px;">
-            <div style="text-align: center; margin-bottom: 20px;">
-                <h1 style="margin: 0; font-size: 24px;">${name}</h1>
-                <p style="margin: 5px 0; font-size: 16px; color: #666;">${jobTitle}</p>
-                <div style="font-size: 14px; margin-top: 10px;">
-                    ${email ? `<span style="margin: 0 10px;">${email}</span>` : ''}
-                    ${phone ? `<span style="margin: 0 10px;">${phone}</span>` : ''}
-                    ${location ? `<span style="margin: 0 10px;">${location}</span>` : ''}
-                </div>
-            </div>
-    `;
-    
-    // Add summary if available
-    if (summary) {
-        pdfContent += `
-            <div style="margin-bottom: 20px;">
-                <h2 style="font-size: 18px; border-bottom: 1px solid #ddd; padding-bottom: 5px; color: #444;">Professional Summary</h2>
-                <p>${summary}</p>
-            </div>
-        `;
-    }
-    
-    // Add experience section
-    if (resumeData.experience && resumeData.experience.length > 0) {
-        pdfContent += `<div style="margin-bottom: 20px;">
-            <h2 style="font-size: 18px; border-bottom: 1px solid #ddd; padding-bottom: 5px; color: #444;">Work Experience</h2>`;
+    // Use html2canvas to capture the resume as an image
+    html2canvas(resumeElement, {
+        scale: 2, // Higher scale for better quality
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#ffffff'
+    }).then(canvas => {
+        const imgData = canvas.toDataURL('image/jpeg', 1.0);
         
-        resumeData.experience.forEach(exp => {
-            const endDate = exp.currentJob ? 'Present' : (exp.endDate ? formatDate(exp.endDate) : '');
-            pdfContent += `
-                <div style="margin-bottom: 15px;">
-                    <h3 style="margin-bottom: 5px; font-size: 16px;">${exp.position}</h3>
-                    <div style="font-size: 14px; color: #666;">
-                        <span>${exp.companyName}</span>
-                        ${exp.location ? ` | <span>${exp.location}</span>` : ''}
-                        ${exp.startDate ? ` | <span>${formatDate(exp.startDate)} - ${endDate}</span>` : ''}
-                    </div>
-                    ${exp.description ? `<p style="margin-top: 8px; font-size: 14px;">${exp.description}</p>` : ''}
-                </div>
-            `;
+        // Calculate PDF dimensions based on A4 size
+        const pdf = new jspdf.jsPDF({
+            orientation: 'portrait',
+            unit: 'mm',
+            format: 'a4'
         });
         
-        pdfContent += `</div>`;
-    }
-    
-    // Add education section
-    if (resumeData.education && resumeData.education.length > 0) {
-        pdfContent += `<div style="margin-bottom: 20px;">
-            <h2 style="font-size: 18px; border-bottom: 1px solid #ddd; padding-bottom: 5px; color: #444;">Education</h2>`;
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = pdf.internal.pageSize.getHeight();
+        const imgWidth = canvas.width;
+        const imgHeight = canvas.height;
+        const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+        const imgX = (pdfWidth - imgWidth * ratio) / 2;
         
-        resumeData.education.forEach(edu => {
-            pdfContent += `
-                <div style="margin-bottom: 15px;">
-                    <h3 style="margin-bottom: 5px; font-size: 16px;">${edu.degree}${edu.fieldOfStudy ? ` in ${edu.fieldOfStudy}` : ''}</h3>
-                    <div style="font-size: 14px; color: #666;">
-                        <span>${edu.schoolName}</span>
-                        ${edu.startDate ? ` | <span>${formatDate(edu.startDate)} - ${formatDate(edu.endDate)}</span>` : ''}
-                    </div>
-                    ${edu.achievements ? `<p style="margin-top: 8px; font-size: 14px;">${edu.achievements}</p>` : ''}
-                </div>
-            `;
-        });
+        pdf.addImage(imgData, 'JPEG', imgX, 0, imgWidth * ratio, imgHeight * ratio);
         
-        pdfContent += `</div>`;
-    }
-    
-    // Add skills section
-    if (resumeData.skills && resumeData.skills.length > 0) {
-        pdfContent += `<div style="margin-bottom: 20px;">
-            <h2 style="font-size: 18px; border-bottom: 1px solid #ddd; padding-bottom: 5px; color: #444;">Skills</h2>`;
-        
-        resumeData.skills.forEach(category => {
-            if (category.skills.length > 0) {
-                pdfContent += `
-                    <div style="margin-bottom: 10px;">
-                        <h3 style="margin-bottom: 5px; font-size: 16px;">${category.categoryName || 'Skills'}</h3>
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                            ${category.skills.map(skill => `<span style="background-color: #f1f1f1; padding: 4px 10px; border-radius: 16px; font-size: 13px;">${skill}</span>`).join('')}
-                        </div>
-                    </div>
-                `;
-            }
-        });
-        
-        pdfContent += `</div>`;
-    }
-    
-    // Close the main container
-    pdfContent += `</div>`;
-    
-    // Open a new window with the resume content
-    const printWindow = window.open('', '_blank');
-    printWindow.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>${name} - Resume</title>
-            <meta charset="utf-8">
-            <style>
-                @media print {
-                    body {
-                        margin: 0;
-                        padding: 0;
-                    }
-                    @page {
-                        size: A4;
-                        margin: 1cm;
-                    }
-                }
-            </style>
-        </head>
-        <body>
-            ${pdfContent}
-            <script>
-                // Automatically print and then close this window
-                window.onload = function() {
-                    window.print();
-                };
-            </script>
-        </body>
-        </html>
-    `);
-    printWindow.document.close();
+        // Download the PDF file
+        pdf.save(`${name.replace(/\s+/g, '_')}_Resume.pdf`);
+    }).catch(error => {
+        console.error('Error generating PDF:', error);
+        alert('There was an error generating your PDF. Please try again.');
+    });
 }
 
 // Function to export resume to Word format
