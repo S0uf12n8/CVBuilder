@@ -54,6 +54,72 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.innerWidth < 992) {
                 sidebar.classList.remove('expanded');
             }
+            
+            // Handle navigation based on href
+            const targetHref = this.getAttribute('href');
+            
+            if (targetHref === '#settings') {
+                e.preventDefault();
+                showSettingsSection();
+            } else if (targetHref === '#dashboard') {
+                e.preventDefault();
+                showDashboardSections();
+            }
+        });
+    });
+    
+    // Function to show settings section and hide other sections
+    function showSettingsSection() {
+        // Show stats cards which are always visible
+        document.querySelector('.stats-cards').style.display = 'grid';
+        
+        // Hide all main content sections except stats-cards and settings-section
+        const contentSections = document.querySelectorAll('.dashboard-content > section:not(.stats-cards):not(#settings-section)');
+        contentSections.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Show settings section
+        const settingsSection = document.getElementById('settings-section');
+        if (settingsSection) {
+            settingsSection.style.display = 'block';
+            
+            // Scroll to settings section
+            settingsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    
+    // Function to show dashboard sections and hide settings
+    function showDashboardSections() {
+        // Show all main content sections except settings
+        const contentSections = document.querySelectorAll('.dashboard-content > section:not(#settings-section)');
+        contentSections.forEach(section => {
+            if (section.classList.contains('stats-cards')) {
+                section.style.display = 'grid';
+            } else if (section.classList.contains('service-cards')) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'block';
+            }
+        });
+        
+        // Hide settings section
+        const settingsSection = document.getElementById('settings-section');
+        if (settingsSection) {
+            settingsSection.style.display = 'none';
+        }
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // Settings action buttons
+    const settingsButtons = document.querySelectorAll('.settings-action .btn');
+    settingsButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const settingType = this.getAttribute('href').split('/')[1];
+            showNotification(`${settingType.replace('-', ' ')} settings opened`, 'info');
         });
     });
     
@@ -76,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
         notification.innerHTML = `
-            <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+            <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'info' ? 'info-circle' : 'exclamation-circle'}"></i>
             <span>${message}</span>
         `;
         
@@ -95,11 +161,11 @@ document.addEventListener('DOMContentLoaded', function() {
             z-index: 1000;
             transform: translateY(100px);
             transition: transform 0.3s ease;
-            border-left: 4px solid ${type === 'success' ? '#10b981' : '#3a86ff'};
+            border-left: 4px solid ${type === 'success' ? '#10b981' : type === 'info' ? '#3a86ff' : '#f59e0b'};
             max-width: 300px;
         `;
         
-        notification.querySelector('i').style.color = type === 'success' ? '#10b981' : '#3a86ff';
+        notification.querySelector('i').style.color = type === 'success' ? '#10b981' : type === 'info' ? '#3a86ff' : '#f59e0b';
         
         document.body.appendChild(notification);
         
@@ -115,6 +181,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.removeChild(notification);
             }, 300);
         }, 4000);
+    }
+    
+    // Check if settings is in URL hash on page load
+    if (window.location.hash === '#settings') {
+        // Find the settings nav item and trigger a click
+        const settingsNavItem = document.querySelector('.nav-item a[href="#settings"]');
+        if (settingsNavItem) {
+            settingsNavItem.click();
+        }
     }
     
     // Initialize any other components or functionality
