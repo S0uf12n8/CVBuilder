@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder | AI Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="resume-builder-container">
+        <!-- Header with navigation -->
+        <header class="builder-header">
+            <div class="header-left">
+                <a href="../../user-dashboard/index.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Dashboard</span>
+                </a>
+                <h1>AI Resume Builder</h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn secondary" id="save-draft">
+                    <i class="fas fa-save"></i>
+                    <span>Save Draft</span>
+                </button>
+                <button class="btn primary" id="download-resume">
+                    <i class="fas fa-download"></i>
+                    <span>Download PDF</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="builder-content">
+            <!-- Sidebar with sections -->
+            <aside class="builder-sidebar">
+                <div class="template-selection">
+                    <h2>Choose Template</h2>
+                    <div class="template-options">
+                        <div class="template-option active" data-template="modern">
+                            <div class="template-preview">
+                                <img src="../../imgs/template-modern.png" alt="Modern Template">
+                            </div>
+                            <span>Modern</span>
+                        </div>
+                        <div class="template-option" data-template="professional">
+                            <div class="template-preview">
+                                <img src="../../imgs/template-professional.png" alt="Professional Template">
+                            </div>
+                            <span>Professional</span>
+                        </div>
+                        <div class="template-option" data-template="creative">
+                            <div class="template-preview">
+                                <img src="../../imgs/template-creative.png" alt="Creative Template">
+                            </div>
+                            <span>Creative</span>
+                        </div>
+                        <div class="template-option" data-template="simple">
+                            <div class="template-preview">
+                                <img src="../../imgs/template-simple.png" alt="Simple Template">
+                            </div>
+                            <span>Simple</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resume-sections">
+                    <h2>Resume Sections</h2>
+                    <ul class="section-list">
+                        <li class="section-item active" data-section="personal">
+                            <i class="fas fa-user"></i>
+                            <span>Personal Information</span>
+                        </li>
+                        <li class="section-item" data-section="summary">
+                            <i class="fas fa-align-left"></i>
+                            <span>Professional Summary</span>
+                        </li>
+                        <li class="section-item" data-section="experience">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Work Experience</span>
+                        </li>
+                        <li class="section-item" data-section="education">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education</span>
+                        </li>
+                        <li class="section-item" data-section="skills">
+                            <i class="fas fa-tools"></i>
+                            <span>Skills</span>
+                        </li>
+                        <li class="section-item" data-section="certifications">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certifications</span>
+                        </li>
+                        <li class="section-item" data-section="languages">
+                            <i class="fas fa-language"></i>
+                            <span>Languages</span>
+                        </li>
+                        <li class="section-item" data-section="projects">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Projects</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="ai-assistant">
+                    <div class="ai-assistant-header">
+                        <h3><i class="fas fa-robot"></i> AI Assistant</h3>
+                    </div>
+                    <div class="ai-tips">
+                        <p>Writing a strong resume? Here are some tips:</p>
+                        <ul>
+                            <li>Tailor your resume to the job description</li>
+                            <li>Use action verbs to describe achievements</li>
+                            <li>Quantify your accomplishments with numbers</li>
+                        </ul>
+                        <button class="btn secondary" id="more-tips">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Get More Tips</span>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Form area -->
+            <div class="form-container">
+                <div class="form-section active" id="personal-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-user"></i> Personal Information</h2>
+                        <p>Add your personal and contact details</p>
+                    </div>
+                    <div class="form-fields">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" placeholder="e.g., John Smith">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="job-title">Job Title</label>
+                                <input type="text" id="job-title" placeholder="e.g., Software Developer">
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" placeholder="e.g., New York, NY">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="e.g., john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" placeholder="e.g., (555) 123-4567">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website/LinkedIn</label>
+                            <input type="url" id="website" placeholder="e.g., linkedin.com/in/johnsmith">
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-photo">Profile Photo</label>
+                            <div class="file-upload">
+                                <input type="file" id="profile-photo" accept="image/*">
+                                <label for="profile-photo" class="file-upload-label">
+                                    <i class="fas fa-upload"></i>
+                                    <span>Choose a file</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn primary next-section">Next: Professional Summary</button>
+                    </div>
+                </div>
+
+                <!-- Other form sections would go here -->
+                <!-- They'll be shown/hidden with JavaScript -->
+            </div>
+            
+            <!-- Preview area -->
+            <div class="preview-container">
+                <div class="preview-header">
+                    <h2>Preview</h2>
+                    <div class="preview-actions">
+                        <button class="btn icon-only" id="zoom-in" title="Zoom In">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                        <button class="btn icon-only" id="zoom-out" title="Zoom Out">
+                            <i class="fas fa-search-minus"></i>
+                        </button>
+                        <button class="btn icon-only" id="fullscreen" title="Fullscreen">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="resume-preview">
+                    <div class="resume modern-template">
+                        <!-- This will be populated by JavaScript -->
+                        <div class="resume-header">
+                            <div class="resume-name" id="preview-name">John Smith</div>
+                            <div class="resume-title" id="preview-title">Software Developer</div>
+                            <div class="resume-contact">
+                                <span id="preview-location"><i class="fas fa-map-marker-alt"></i> New York, NY</span>
+                                <span id="preview-email"><i class="fas fa-envelope"></i> john@example.com</span>
+                                <span id="preview-phone"><i class="fas fa-phone"></i> (555) 123-4567</span>
+                                <span id="preview-website"><i class="fas fa-globe"></i> linkedin.com/in/johnsmith</span>
+                            </div>
+                        </div>
+                        <div class="resume-body">
+                            <div class="resume-section">
+                                <h3 class="section-title">Professional Summary</h3>
+                                <div class="section-content" id="preview-summary">
+                                    <p>Experienced software developer with 5+ years specializing in frontend development. Proven track record of building responsive web applications with modern JavaScript frameworks.</p>
+                                </div>
+                            </div>
+                            <!-- More preview sections will be added dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
