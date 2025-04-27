@@ -4,239 +4,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard - AI Resume Builder</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Dashboard | AI Resume Builder</title>
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
     <div class="dashboard-container">
-        <!-- Top Navigation -->
-        <div class="top-nav">
-            <div class="welcome-section">
-                <div class="user-avatar">JS</div>
-                <div>
-                    <h2>Welcome back, John Smith</h2>
-                    <p>Last login: April 27, 2025, 10:30 AM</p>
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-file-alt"></i>
+                <h2>AI Resume Builder</h2>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-details">
+                    <h3>Welcome, <span id="user-name">John</span></h3>
+                    <p class="user-plan">Premium Plan</p>
                 </div>
             </div>
-            <button class="logout-btn">
-                <i class="fas fa-sign-out-alt"></i> Logout
-            </button>
-        </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#dashboard">
+                            <i class="fas fa-th-large"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resume">
+                            <i class="fas fa-file-alt"></i>
+                            <span>My Resumes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#jobs">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Job Search</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#applications">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Applications</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#interviews">
+                            <i class="fas fa-comments"></i>
+                            <span>Interview Prep</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
 
-        <!-- Quick Stats -->
-        <div class="quick-stats">
-            <div class="stat-box resumes">
-                <div class="stat-icon">
-                    <i class="fas fa-file-alt"></i>
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Dashboard</h1>
                 </div>
-                <div class="stat-count">3</div>
-                <div class="stat-title">Resumes Created</div>
-            </div>
-            <div class="stat-box applications">
-                <div class="stat-icon">
-                    <i class="fas fa-paper-plane"></i>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="header-actions">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="help-btn">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="stat-count">12</div>
-                <div class="stat-title">Applications Sent</div>
-            </div>
-            <div class="stat-box interviews">
-                <div class="stat-icon">
-                    <i class="fas fa-comments"></i>
-                </div>
-                <div class="stat-count">2</div>
-                <div class="stat-title">Interviews Scheduled</div>
-            </div>
-            <div class="stat-box views">
-                <div class="stat-icon">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="stat-count">47</div>
-                <div class="stat-title">Resume Views</div>
-            </div>
-        </div>
+            </header>
 
-        <h2>Your Services</h2>
-        <div class="services-grid">
-            <!-- Server Status Card -->
-            <div class="service-card">
-                <div class="service-card-header server">
-                    <div class="card-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3>Our Servers</h3>
-                    <p>System status and performance</p>
-                </div>
-                <div class="service-card-body">
-                    <div class="server-status-list">
-                        <div class="server-status-item">
-                            <span><span class="status-indicator status-online"></span> Resume Builder</span>
-                            <span>100% Uptime</span>
+            <div class="dashboard-content">
+                <!-- Quick Stats -->
+                <section class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon resume-icon">
+                            <i class="fas fa-file-alt"></i>
                         </div>
-                        <div class="server-status-item">
-                            <span><span class="status-indicator status-online"></span> Job Search API</span>
-                            <span>99.8% Uptime</span>
+                        <div class="stat-details">
+                            <h3>2</h3>
+                            <p>Active Resumes</p>
                         </div>
-                        <div class="server-status-item">
-                            <span><span class="status-indicator status-maintenance"></span> AI Analysis</span>
-                            <span>Maintenance</span>
-                        </div>
-                        <div class="server-status-item">
-                            <span><span class="status-indicator status-online"></span> Document Storage</span>
-                            <span>100% Uptime</span>
+                        <div class="stat-actions">
+                            <a href="#resume">View All</a>
                         </div>
                     </div>
-                </div>
-                <div class="service-card-footer">
-                    <a href="#" class="card-btn server">View Status Details</a>
-                </div>
+                    <div class="stat-card">
+                        <div class="stat-icon job-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>12</h3>
+                            <p>Job Matches</p>
+                        </div>
+                        <div class="stat-actions">
+                            <a href="#jobs">View All</a>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon application-icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>5</h3>
+                            <p>Applications</p>
+                        </div>
+                        <div class="stat-actions">
+                            <a href="#applications">View All</a>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon interview-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>2</h3>
+                            <p>Upcoming Interviews</p>
+                        </div>
+                        <div class="stat-actions">
+                            <a href="#interviews">View All</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Service Cards -->
+                <section class="service-cards">
+                    <h2>My Services</h2>
+                    <div class="cards-container">
+                        <div class="service-card">
+                            <div class="card-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>AI Resume Creation</h3>
+                                <p>Create professional, ATS-optimized resumes with intelligent suggestions</p>
+                                <div class="card-actions">
+                                    <a href="resume-builder.html" class="btn primary">Create Resume</a>
+                                    <a href="#edit" class="btn secondary">Edit Existing</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="card-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Job Search Tool</h3>
+                                <p>Find relevant job listings tailored to your skills and preferences</p>
+                                <div class="card-actions">
+                                    <a href="services/job-search/index.html" class="btn primary">Find Jobs</a>
+                                    <a href="#preferences" class="btn secondary">My Preferences</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="card-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Application Tracker</h3>
+                                <p>Track and manage your job applications with status updates</p>
+                                <div class="card-actions">
+                                    <a href="#applications" class="btn primary">My Applications</a>
+                                    <a href="#applications/add" class="btn secondary">Add New</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="card-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Interview Preparation</h3>
+                                <p>Practice with AI-powered mock interviews and get feedback</p>
+                                <div class="card-actions">
+                                    <a href="#interviews/practice" class="btn primary">Start Practice</a>
+                                    <a href="#interviews/library" class="btn secondary">Question Library</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activity -->
+                <section class="recent-activity">
+                    <div class="section-header">
+                        <h2>Recent Activity</h2>
+                        <a href="#all-activity" class="view-all">View All</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Resume Updated</h4>
+                                <p>You updated your "Software Developer" resume</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                            <div class="activity-actions">
+                                <a href="#resume/1" class="btn text-btn">View</a>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Application Submitted</h4>
+                                <p>You applied for "Senior Frontend Developer" at TechCorp</p>
+                                <span class="activity-time">Yesterday</span>
+                            </div>
+                            <div class="activity-actions">
+                                <a href="#application/2" class="btn text-btn">View</a>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Interview Scheduled</h4>
+                                <p>You have an interview with DataSoft on May 2nd, 2025</p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                            <div class="activity-actions">
+                                <a href="#interview/1" class="btn text-btn">Prepare</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Upcoming Events -->
+                <section class="upcoming-events">
+                    <div class="section-header">
+                        <h2>Upcoming Events</h2>
+                        <a href="#calendar" class="view-all">View Calendar</a>
+                    </div>
+                    <div class="events-list">
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">02</span>
+                                <span class="month">May</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Interview with DataSoft</h4>
+                                <p><i class="fas fa-clock"></i> 10:00 AM - 11:00 AM</p>
+                                <p><i class="fas fa-video"></i> Zoom Meeting</p>
+                            </div>
+                            <div class="event-actions">
+                                <a href="#interview/1/prepare" class="btn secondary">Prepare Now</a>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">05</span>
+                                <span class="month">May</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Follow-up: TechCorp Application</h4>
+                                <p><i class="fas fa-clock"></i> All Day</p>
+                                <p><i class="fas fa-bell"></i> Reminder Set</p>
+                            </div>
+                            <div class="event-actions">
+                                <a href="#reminder/1" class="btn secondary">Edit Reminder</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Job Recommendations -->
+                <section class="job-recommendations">
+                    <div class="section-header">
+                        <h2>Job Recommendations</h2>
+                        <a href="#jobs" class="view-all">View All</a>
+                    </div>
+                    <div class="job-list">
+                        <div class="job-item">
+                            <div class="job-company-logo">
+                                <img src="https://via.placeholder.com/50" alt="Company Logo">
+                            </div>
+                            <div class="job-details">
+                                <h4>Senior Frontend Developer</h4>
+                                <p class="job-company">InnovateTech Solutions</p>
+                                <p class="job-location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA (Remote)</p>
+                                <div class="job-match">
+                                    <span class="match-label">95% Match</span>
+                                    <div class="match-bar">
+                                        <div class="match-fill" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="job-actions">
+                                <button class="btn primary">Apply Now</button>
+                                <button class="btn icon-only"><i class="far fa-bookmark"></i></button>
+                            </div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-company-logo">
+                                <img src="https://via.placeholder.com/50" alt="Company Logo">
+                            </div>
+                            <div class="job-details">
+                                <h4>Full Stack Developer</h4>
+                                <p class="job-company">SoftGrid Inc</p>
+                                <p class="job-location"><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+                                <div class="job-match">
+                                    <span class="match-label">88% Match</span>
+                                    <div class="match-bar">
+                                        <div class="match-fill" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="job-actions">
+                                <button class="btn primary">Apply Now</button>
+                                <button class="btn icon-only"><i class="far fa-bookmark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skill Suggestions -->
+                <section class="skill-suggestions">
+                    <div class="section-header">
+                        <h2>Skills To Add</h2>
+                        <a href="#skills" class="view-all">View All</a>
+                    </div>
+                    <div class="skills-container">
+                        <p class="skills-intro">Based on your job interests, consider adding these skills to your resume:</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React Native <i class="fas fa-plus-circle"></i></span>
+                            <span class="skill-tag">TypeScript <i class="fas fa-plus-circle"></i></span>
+                            <span class="skill-tag">GraphQL <i class="fas fa-plus-circle"></i></span>
+                            <span class="skill-tag">AWS <i class="fas fa-plus-circle"></i></span>
+                            <span class="skill-tag">Docker <i class="fas fa-plus-circle"></i></span>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <!-- Resume Creation Card -->
-            <div class="service-card">
-                <div class="service-card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>Resume Creation</h3>
-                    <p>Build and manage your resumes</p>
-                </div>
-                <div class="service-card-body">
-                    <p>Create professionally designed resumes with our AI-powered tools. Tailor your content to specific job listings and export in multiple formats.</p>
-                    <div class="service-stats">
-                        <div class="stat">
-                            <div class="stat-value">3</div>
-                            <div class="stat-label">Resumes</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">2</div>
-                            <div class="stat-label">Templates</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">5</div>
-                            <div class="stat-label">Versions</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card-footer">
-                    <a href="resume-builder.html" class="card-btn">Create or Edit Resume</a>
-                </div>
-            </div>
-
-            <!-- Job Search Card -->
-            <div class="service-card">
-                <div class="service-card-header job-search">
-                    <div class="card-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>Job Search Tool</h3>
-                    <p>Find jobs matching your skills</p>
-                </div>
-                <div class="service-card-body">
-                    <p>Discover job opportunities tailored to your skills and experience. Set up alerts for new postings that match your criteria.</p>
-                    <div class="service-stats">
-                        <div class="stat">
-                            <div class="stat-value">28</div>
-                            <div class="stat-label">Matches</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">3</div>
-                            <div class="stat-label">Searches</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">5</div>
-                            <div class="stat-label">Alerts</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card-footer">
-                    <a href="../services/job-search/index.html" class="card-btn job-search">Search Jobs</a>
-                </div>
-            </div>
-
-            <!-- Application Tracker Card -->
-            <div class="service-card">
-                <div class="service-card-header app-tracker">
-                    <div class="card-icon">
-                        <i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <h3>Application Tracker</h3>
-                    <p>Manage your job applications</p>
-                </div>
-                <div class="service-card-body">
-                    <p>Keep track of your job applications, follow-ups, and responses. Set reminders for interviews and next steps.</p>
-                    <div class="service-stats">
-                        <div class="stat">
-                            <div class="stat-value">12</div>
-                            <div class="stat-label">Applications</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">2</div>
-                            <div class="stat-label">Interviews</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">5</div>
-                            <div class="stat-label">Pending</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card-footer">
-                    <a href="#" class="card-btn app-tracker">Manage Applications</a>
-                </div>
-            </div>
-
-            <!-- Interview Preparation Card -->
-            <div class="service-card">
-                <div class="service-card-header interview">
-                    <div class="card-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Interview Preparation</h3>
-                    <p>Practice and prepare for interviews</p>
-                </div>
-                <div class="service-card-body">
-                    <p>Get ready for your interviews with practice questions, AI-powered feedback, and industry-specific guides to boost your confidence.</p>
-                    <div class="service-stats">
-                        <div class="stat">
-                            <div class="stat-value">3</div>
-                            <div class="stat-label">Practice Sessions</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">42</div>
-                            <div class="stat-label">Questions</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value">2</div>
-                            <div class="stat-label">Mock Interviews</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card-footer">
-                    <a href="#" class="card-btn interview">Start Practice</a>
-                </div>
-            </div>
-        </div>
+            <footer class="dashboard-footer">
+                <p>&copy; 2025 AI Resume Builder | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </footer>
+        </main>
     </div>
 
-    <script>
-        // Simple JavaScript for logout functionality
-        document.querySelector('.logout-btn').addEventListener('click', function() {
-            // In a real application, this would handle the logout process
-            window.location.href = '../index.html';
-        });
-
-        // Redirect to resume builder
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create a link to the existing resume builder page
-            const resumeBuilderLink = document.querySelector('.service-card:nth-child(2) .card-btn');
-            resumeBuilderLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.location.href = 'resume-builder.html';
-            });
-        });
-    </script>
+    <script src="js/dashboard.js"></script>
 </body>
 
 </html>
