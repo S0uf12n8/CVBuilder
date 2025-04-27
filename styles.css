@@ -314,12 +314,12 @@ nav ul li a:hover {
     border-radius: 3px;
     width: 0;
     transition: width 2s ease-in-out;
-    animation: fillHeroAccent 2s forwards 0.5s;
+    animation: none;
 }
 
 @keyframes fillHeroAccent {
     from { width: 0; }
-    to { width: 85%; }
+    to { width: 0; }
 }
 
 .cta-buttons {
@@ -622,22 +622,6 @@ nav ul li a:hover {
     border-radius: 3px;
     width: 0;
     transition: width 2s ease-in-out;
-}
-
-.feature-card:nth-child(1) .feature-accent-fill {
-    width: 95%;
-}
-
-.feature-card:nth-child(2) .feature-accent-fill {
-    width: 80%;
-}
-
-.feature-card:nth-child(3) .feature-accent-fill {
-    width: 85%;
-}
-
-.feature-card:nth-child(4) .feature-accent-fill {
-    width: 90%;
 }
 
 .features-cta {
