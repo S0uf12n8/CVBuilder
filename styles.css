@@ -1,7 +1,7 @@
 /* --- Global Styles --- */
 :root {
-    --primary-color: #4a6bff;
-    --primary-hover: #3a5bef;
+    --primary-color: #2c7da0;
+    --primary-hover: #468faf;
     --secondary-color: #f8f9fa;
     --accent-color: #28a745;
     --dark-color: #212529;
@@ -459,16 +459,16 @@
   }
   
   .feature-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-color: rgba(74, 107, 255, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-right: 1rem;
+    font-size: 1.75rem;
+    margin-right: 1.5rem;
   }
   
   .feature-name {
@@ -478,7 +478,7 @@
   
   .feature-description {
     color: var(--gray-color);
-    line-height: : 1.6;
+    line-height:  1.6;
   }
   
   .features-cta {
