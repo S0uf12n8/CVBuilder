@@ -792,6 +792,7 @@ nav ul li a.active {
 
 /* Services section */
 /* Services Section - Redesigned to match Stats section */
+/* Services Section - Improved Layout */
 #services {
     background-color: #2d3748;
     color: white;
@@ -805,7 +806,6 @@ nav ul li a.active {
     left: 0;
     width: 100%;
     height: 100%;
-   /* background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8cmVzdW1lfGVufDB8fHx8MTY5MjA0OTAzNnww&ixlib=rb-4.0.3&q=80&w=1200');*/
     background-size: cover;
     background-position: center;
     opacity: 0.1;
@@ -821,14 +821,14 @@ nav ul li a.active {
 }
 
 #services .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     color: white;
     background: linear-gradient(135deg, #ff6b6b, #ff9e7d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
 }
 
 .services-subtitle {
@@ -838,10 +838,12 @@ nav ul li a.active {
     margin-bottom: 4rem;
 }
 
-.services-container {
+/* New grid layout for more even appearance */
+.services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .service-card {
@@ -855,6 +857,8 @@ nav ul li a.active {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.05);
     height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .service-card:hover {
@@ -862,37 +866,48 @@ nav ul li a.active {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
-.service-icon {
-    font-size: 2.5rem;
-    color: #ff6b6b;
-    margin-bottom: 1.5rem;
-    text-align: center;
+/* Improved service card layout */
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
 }
 
-.service-content {
-    text-align: center;
-    flex: 1;
+.service-icon {
+    font-size: 2rem;
+    color: #ff6b6b;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
 }
 
 .service-name {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     background: linear-gradient(135deg, #ff6b6b, #ff9e7d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
+    margin: 0;
+}
+
+.service-content {
+    flex: 1;
 }
 
 .service-description {
     font-size: 1rem;
+    line-height: 1.6;
     color: white;
     margin-bottom: 1.5rem;
-    line-height: 1.5;
 }
 
+/* Accent bar at bottom of card */
 .service-accent {
     width: 100%;
     height: 6px;
@@ -907,34 +922,27 @@ nav ul li a.active {
     background: linear-gradient(to right, #ff6b6b, #ff9e7d);
     border-radius: 3px;
     width: 0;
-    transition: none;
+    transition: width 2s ease-in-out;
 }
 
+/* Each card gets a different width accent fill */
 .service-card:nth-child(1) .service-accent-fill {
     width: 85%;
 }
 
 .service-card:nth-child(2) .service-accent-fill {
-    width: 65%;
-}
-
-.service-card:nth-child(3) .service-accent-fill {
     width: 75%;
 }
 
-.application-counter {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.8);
+.service-card:nth-child(3) .service-accent-fill {
+    width: 90%;
 }
 
-#application-count {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #ff6b6b;
+.service-card:nth-child(4) .service-accent-fill {
+    width: 80%;
 }
 
+/* CTA section */
 .services-cta {
     margin-top: 3rem;
     text-align: center;
@@ -963,6 +971,12 @@ nav ul li a.active {
     box-shadow: 0 8px 20px rgba(255, 107, 107, 0.5);
 }
 
+/* Responsive design */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
 /* Stats section */
 #stats {
     background-color: var(--gray-100);
