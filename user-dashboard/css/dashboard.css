@@ -1,0 +1,500 @@
+/* Dashboard-specific styles */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Top navigation bar */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.welcome-section {
+    display: flex;
+    align-items: center;
+}
+
+.welcome-section .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-weight: 600;
+}
+
+.logout-btn {
+    background-color: #f8f9fa;
+    color: var(--dark-gray);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.logout-btn:hover {
+    background-color: #e9ecef;
+}
+
+.logout-btn i {
+    margin-right: 6px;
+}
+
+/* Service cards grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+}
+
+.service-card-header.server {
+    background-color: #ff7b00;
+}
+
+.service-card-header.job-search {
+    background-color: var(--accent-color);
+}
+
+.service-card-header.app-tracker {
+    background-color: var(--success-color);
+}
+
+.service-card-header.interview {
+    background-color: #ff3366;
+}
+
+.service-card-header .card-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.service-card-header h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.service-card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card-body p {
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    flex-grow: 1;
+}
+
+.service-card-footer {
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--light-gray);
+}
+
+.service-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--dark-gray);
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--secondary-color);
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.card-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.card-btn.server {
+    background-color: #ff7b00;
+}
+
+.card-btn.server:hover {
+    background-color: #e06d00;
+}
+
+.card-btn.job-search {
+    background-color: var(--accent-color);
+}
+
+.card-btn.job-search:hover {
+    background-color: #7026d3;
+}
+
+.card-btn.app-tracker {
+    background-color: var(--success-color);
+}
+
+.card-btn.app-tracker:hover {
+    background-color: #309700;
+}
+
+.card-btn.interview {
+    background-color: #ff3366;
+}
+
+.card-btn.interview:hover {
+    background-color: #e01f50;
+}
+
+/* Status indicators */
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status-online {
+    background-color: var(--success-color);
+}
+
+.status-maintenance {
+    background-color: #ffc107;
+}
+
+.status-offline {
+    background-color: #dc3545;
+}
+
+/* Quick stats section */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stat-box:hover {
+    transform: translateY(-3px);
+}
+
+.stat-box .stat-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.stat-box.resumes .stat-icon {
+    color: var(--primary-color);
+}
+
+.stat-box.applications .stat-icon {
+    color: var(--success-color);
+}
+
+.stat-box.interviews .stat-icon {
+    color: var(--accent-color);
+}
+
+.stat-box.views .stat-icon {
+    color: #ff7b00;
+}
+
+.stat-box .stat-count {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.stat-box .stat-title {
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+/* Resume builder page specific styles */
+.builder-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.back-button {
+    background-color: #f8f9fa;
+    color: var(--dark-gray);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.back-button:hover {
+    background-color: #e9ecef;
+}
+
+.back-button i {
+    margin-right: 6px;
+}
+
+.resume-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.resume-option-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    overflow: hidden;
+    height: 100%;
+}
+
+.resume-option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resume-option-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.resume-option-header.create-new {
+    background-color: var(--success-color);
+}
+
+.resume-option-header.edit-existing {
+    background-color: var(--accent-color);
+}
+
+.resume-option-header .option-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.resume-option-body {
+    padding: 25px;
+}
+
+.resume-option-body p {
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.resume-option-btn {
+    display: block;
+    padding: 12px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.resume-option-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.resume-option-btn.create-new {
+    background-color: var(--success-color);
+}
+
+.resume-option-btn.create-new:hover {
+    background-color: #309700;
+}
+
+.resume-option-btn.edit-existing {
+    background-color: var(--accent-color);
+}
+
+.resume-option-btn.edit-existing:hover {
+    background-color: #7026d3;
+}
+
+.recent-resumes {
+    margin-top: 40px;
+}
+
+.recent-resumes h3 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.resume-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.resume-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 15px;
+    transition: var(--transition);
+}
+
+.resume-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resume-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.resume-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.resume-date {
+    color: var(--secondary-color);
+    font-size: 12px;
+}
+
+.resume-info {
+    color: var(--secondary-color);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.resume-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.resume-action-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    border: 1px solid var(--border-color);
+    background-color: #f8f9fa;
+    color: var(--dark-gray);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.resume-action-btn:hover {
+    background-color: #e9ecef;
+}
+
+.resume-action-btn.edit {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.resume-action-btn.edit:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .top-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .resume-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .resume-action-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+/* Server status items */
+.server-status-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
