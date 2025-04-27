@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #3a86ff;
-    --primary-dark: #2970d6;
-    --secondary-color: #ff006e;
-    --accent-color: #8338ec;
+    --primary-color: #0052cc;
+    --primary-dark: #0043a6;
+    --secondary-color: #2c5282;
+    --accent-color: #4a88ff;
     --light-color: #ffffff;
     --dark-color: #333333;
     --gray-100: #f8f9fa;
@@ -14,9 +14,9 @@
     --gray-700: #495057;
     --gray-800: #343a40;
     --gray-900: #212529;
-    --gradient-blue: linear-gradient(135deg, #3a86ff, #0072ff);
-    --gradient-purple: linear-gradient(135deg, #8338ec, #3a0ca3);
-    --gradient-pink: linear-gradient(135deg, #ff006e, #f72585);
+    --gradient-blue: linear-gradient(135deg, #0052cc, #0070e0);
+    --gradient-purple: linear-gradient(135deg, #4a88ff, #0052cc);
+    --gradient-pink: linear-gradient(135deg, #4a88ff, #0052cc);
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -26,6 +26,8 @@
     --transition: all 0.3s ease;
     --font-sans: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
 }
+
+/* The rest of the CSS remains the same */
 
 * {
     margin: 0;
@@ -1872,8 +1874,8 @@ nav ul li a.active {
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.stagger-in.active > *:nth-child(1) { transition-delay: 0.1s; }
-.stagger-in.active > *:nth-child(2) { transition-delay: 0.2s; }
+.stagger-in.active > *:nth-child(1) { transition-delay: 0.2s; }
+.stagger-in.active > *:nth-child(2) { transition-delay: 0.s; }
 .stagger-in.active > *:nth-child(3) { transition-delay: 0.3s; }
 .stagger-in.active > *:nth-child(4) { transition-delay: 0.4s; }
 
