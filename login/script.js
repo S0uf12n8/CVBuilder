@@ -8,18 +8,32 @@ signupBtn.addEventListener('click', () =>{
 loginBtn.addEventListener('click', () =>{
     container.classList.remove('active');
 });
-document.getElementById('login-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
 
-    if (name && email) {
-        // Save name to localStorage (optional, if you want to show it later)
-        localStorage.setItem('userName', name);
-        localStorage.setItem('userEmail', email);
+const loginForm = document.querySelector('.login-form'); 
 
-        // Redirect to dashboard
-        window.location.href = "user-dashboard\index.html";
-    }
+signupBtn.addEventListener('click', () => {
+    container.classList.add('active');
 });
+
+loginBtn.addEventListener('click', () => {
+    container.classList.remove('active');
+});
+
+
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault(); 
+        
+
+        const username = document.querySelector('.login-form input[type="text"]').value;
+        const password = document.querySelector('.login-form input[type="password"]').value;
+        
+
+        if (username && password) {
+            window.location.href = '/user-dashboard/index.html'; 
+        } else {
+            alert('Please enter valid credentials');
+        }
+    });
+}
+
