@@ -37,10 +37,6 @@ if (loginForm) {
     });
 }
 
-<<<<<<< HEAD
-=======
-=======
-
 // Handle login form submission
 document.getElementById('login-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -78,5 +74,4 @@ document.getElementById('signup-form').addEventListener('submit', function(e) {
         alert("Please fill in all fields");
     }
 });
->>>>>>> 25e5681c6128d6ae2726bb09c486b1f392825d82
->>>>>>> 3ea29b9b0b573530a49bdd31744fd3fea83109c1
+
