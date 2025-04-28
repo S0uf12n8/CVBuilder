@@ -1,37 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize scroll animation observers
     initScrollAnimations();
     
-    // Reset any transforms on page load to prevent zoom issues
     document.querySelectorAll('.zoom-section').forEach(section => {
         section.style.transform = 'scale(1)';
     });
 
-    // Function to handle scroll events for parallax effect
     initParallaxEffect();
     
-    // Initialize mobile menu
     initMobileMenu();
     
-    // Smooth scrolling for anchor links
     initSmoothScrolling();
     
-    // Form submission handler
     initFormHandler();
     
-    // Initialize CV preview
     initCVPreview();
     
-    // Handle page refresh - scroll to top to avoid zoom issues
     if (history.scrollRestoration) {
         history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
 });
 
-// Initialize scroll animations
 function initScrollAnimations() {
-    // Add fade-in class to elements that should animate on scroll
     const elementsToAnimate = [
         '.feature-card', 
         '.service-box', 
@@ -48,7 +38,6 @@ function initScrollAnimations() {
         });
     });
     
-    // Add stagger-in class to container elements
     const staggerContainers = [
         '.features-grid',
         '.services-container',
@@ -61,7 +50,6 @@ function initScrollAnimations() {
         });
     });
     
-    // Create intersection observer for fade-in elements
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -73,12 +61,10 @@ function initScrollAnimations() {
         threshold: 0.15
     });
     
-    // Observe all fade-in elements
     document.querySelectorAll('.fade-in').forEach(el => {
         fadeObserver.observe(el);
     });
     
-    // Create intersection observer for stagger-in containers
     const staggerObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -90,55 +76,41 @@ function initScrollAnimations() {
         threshold: 0.15
     });
     
-    // Observe all stagger-in containers
     document.querySelectorAll('.stagger-in').forEach(el => {
         staggerObserver.observe(el);
     });
 }
 
-// Initialize parallax effect
 function initParallaxEffect() {
-    // Initialize variables to track scroll position
     let lastScrollTop = 0;
     const sections = document.querySelectorAll('.zoom-section');
 
-    // Function to handle scroll events
     window.addEventListener('scroll', function() {
         const st = window.pageYOffset || document.documentElement.scrollTop;
 
-        // For each section, apply parallax effect
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
             const viewportHeight = window.innerHeight;
 
-            // Check if section is in viewport
             if (rect.top < viewportHeight && rect.bottom > 0) {
-                // Calculate how far the section is through the viewport
                 const sectionProgress = 1 - (rect.top / viewportHeight);
 
-                // Apply subtle zoom effect based on scroll position
-                // Scale between 0.98 and 1.02 for subtle effect
                 const scale = 0.98 + (sectionProgress * 0.04);
 
-                // Apply transform with a smooth transition
                 section.style.transform = `scale(${scale})`;
             }
         });
 
-        // Update active menu item based on scroll position
         updateActiveMenuItem();
 
-        // Save current scroll position
         lastScrollTop = st <= 0 ? 0 : st;
     }, false);
 }
 
-// Initialize mobile menu
 function initMobileMenu() {
     const menuToggle = document.getElementById('menu-toggle');
     const menuLinks = document.querySelectorAll('.nav-menu a');
     
-    // Close menu when a link is clicked
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
             menuToggle.checked = false;
@@ -146,7 +118,6 @@ function initMobileMenu() {
     });
 }
 
-// Initialize smooth scrolling
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -158,7 +129,7 @@ function initSmoothScrolling() {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const headerOffset = 70; // Account for fixed header
+                const headerOffset = 70;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                 
@@ -170,16 +141,13 @@ function initSmoothScrolling() {
         });
     });
 }
-// Function to initialize services animations
+
 function initServicesAnimation() {
-    // Get services container
     const servicesContainer = document.querySelector('.services-container');
     if (!servicesContainer) return;
     
-    // Add stagger-in class
     servicesContainer.classList.add('stagger-in');
     
-    // Create observer to detect when services section is visible
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -191,27 +159,19 @@ function initServicesAnimation() {
         threshold: 0.15
     });
     
-    // Observe services container
     observer.observe(servicesContainer);
 }
 
-// Add this function call to your DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
-    // ... other initialization code
-    
-    // Initialize services animations
     initServicesAnimation();
 });
-// Function to initialize features animations
+
 function initFeaturesAnimation() {
-    // Get features container
     const featuresContainer = document.querySelector('.features-container');
     if (!featuresContainer) return;
     
-    // Add stagger-in class
     featuresContainer.classList.add('stagger-in');
     
-    // Create observer to detect when features section is visible
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -223,27 +183,19 @@ function initFeaturesAnimation() {
         threshold: 0.15
     });
     
-    // Observe features container
     observer.observe(featuresContainer);
 }
 
-// Add this function call to your DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
-    // ... other initialization code
-    
-    // Initialize features animations
     initFeaturesAnimation();
 });
-// Function to initialize contact animations
+
 function initContactAnimation() {
-    // Get contact container
     const contactContainer = document.querySelector('.contact-container');
     if (!contactContainer) return;
     
-    // Add stagger-in class
     contactContainer.classList.add('stagger-in');
     
-    // Create observer to detect when contact section is visible
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -255,19 +207,13 @@ function initContactAnimation() {
         threshold: 0.15
     });
     
-    // Observe contact container
     observer.observe(contactContainer);
 }
 
-// Add this function call to your DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
-    // ... other initialization code
-    
-    // Initialize contact animations
     initContactAnimation();
 });
 
-// Update active menu item based on scroll position
 function updateActiveMenuItem() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-menu a');
@@ -275,7 +221,7 @@ function updateActiveMenuItem() {
     let currentSection = '';
     
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100; // Offset for header
+        const sectionTop = section.offsetTop - 100;
         const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute('id');
         
@@ -292,7 +238,6 @@ function updateActiveMenuItem() {
     });
 }
 
-// Initialize form handler
 function initFormHandler() {
     const contactForm = document.querySelector('.contact-form');
     const newsletterForm = document.querySelector('.footer-section.contact-form form');
@@ -301,32 +246,24 @@ function initFormHandler() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Show success message
             const formElements = contactForm.elements;
             const submitButton = contactForm.querySelector('.submit-button');
             
-            // Store original button text
             const originalText = submitButton.textContent;
             
-            // Update button to show progress
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitButton.disabled = true;
             
-            // Simulate form submission (replace with actual form handling)
             setTimeout(() => {
-                // Reset form
                 contactForm.reset();
                 
-                // Show success state
                 submitButton.innerHTML = '<i class="fas fa-check"></i> Sent!';
                 
-                // Reset button after 3 seconds
                 setTimeout(() => {
                     submitButton.innerHTML = originalText;
                     submitButton.disabled = false;
                 }, 3000);
                 
-                // Show success message
                 showNotification('Your message has been sent successfully!', 'success');
             }, 1500);
         });
@@ -336,20 +273,16 @@ function initFormHandler() {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Show success message
             newsletterForm.reset();
             showNotification('You\'ve been subscribed to our newsletter!', 'success');
         });
     }
 }
 
-// Show notification
 function showNotification(message, type = 'info') {
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     
-    // Set message and icon
     let icon = 'info-circle';
     if (type === 'success') icon = 'check-circle';
     if (type === 'error') icon = 'exclamation-circle';
@@ -359,7 +292,6 @@ function showNotification(message, type = 'info') {
         <span>${message}</span>
     `;
     
-    // Add styles
     notification.style.cssText = `
         position: fixed;
         bottom: 20px;
@@ -385,31 +317,25 @@ function showNotification(message, type = 'info') {
         notification.style.borderLeft = '4px solid #3a86ff';
     }
     
-    // Add to DOM
     document.body.appendChild(notification);
     
-    // Animate in
     setTimeout(() => {
         notification.style.transform = 'translateY(0)';
     }, 10);
     
-    // Remove after 4 seconds
     setTimeout(() => {
         notification.style.transform = 'translateY(100px)';
         
-        // Remove from DOM after animation
         setTimeout(() => {
             document.body.removeChild(notification);
         }, 300);
     }, 4000);
 }
 
-// Initialize CV Preview
 function initCVPreview() {
     const resumePreview = document.querySelector('.resume-preview');
     if (!resumePreview) return;
     
-    // Add hover effect alternative for touch devices
     resumePreview.addEventListener('touchstart', function() {
         this.style.transform = 'rotate(0deg)';
     });
@@ -418,7 +344,6 @@ function initCVPreview() {
         this.style.transform = 'rotate(2deg)';
     });
     
-    // Add subtle floating animation
     let floating = true;
     let floatAngle = 0;
     
@@ -435,7 +360,6 @@ function initCVPreview() {
     
     floatAnimation();
     
-    // Pause animation on hover
     resumePreview.addEventListener('mouseenter', function() {
         floating = false;
         this.style.transform = 'rotate(0deg) translateY(0)';
@@ -447,9 +371,7 @@ function initCVPreview() {
     });
 }
 
-// Initialize Stats Counter Animation
 function initStatsCounter() {
-    // Function to check if element is in viewport
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
         return (
@@ -458,11 +380,10 @@ function initStatsCounter() {
         );
     }
     
-    // Function to animate counter
     function animateCounter(element) {
         const target = parseInt(element.getAttribute('data-count'));
-        const duration = 2000; // 2 seconds
-        const step = target / (duration / 16); // 60fps
+        const duration = 2000;
+        const step = target / (duration / 16);
         let current = 0;
         
         const timer = setInterval(() => {
@@ -482,7 +403,6 @@ function initStatsCounter() {
         }, 16);
     }
     
-    // Animate stat bars
     function animateStatBars() {
         document.querySelectorAll('.stat-bar-fill').forEach(bar => {
             const width = bar.style.width;
@@ -493,12 +413,10 @@ function initStatsCounter() {
         });
     }
     
-    // Initialize counters when stats section is visible
     const statsSection = document.getElementById('stats');
     const counters = document.querySelectorAll('.stat-number');
     let hasAnimated = false;
     
-    // Check on scroll if stats section is visible
     window.addEventListener('scroll', function() {
         if (isInViewport(statsSection) && !hasAnimated) {
             hasAnimated = true;
@@ -509,7 +427,6 @@ function initStatsCounter() {
         }
     });
     
-    // Initial check in case stats are already visible on page load
     if (isInViewport(statsSection) && !hasAnimated) {
         hasAnimated = true;
         counters.forEach(counter => {
@@ -519,10 +436,6 @@ function initStatsCounter() {
     }
 }
 
-// Add this to your DOMContentLoaded event
 document.addEventListener('DOMContentLoaded', function() {
-    // Your existing code...
-    
-    // Initialize stats counter
     initStatsCounter();
 });

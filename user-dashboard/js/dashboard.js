@@ -1,5 +1,12 @@
 // dashboard.js
 document.addEventListener('DOMContentLoaded', function() {
+    // Display username from localStorage if available
+    const username = localStorage.getItem('username');
+    const userNameElement = document.querySelector('.user-info h2');
+    if (username && userNameElement) {
+        userNameElement.textContent = username;
+    }
+    
     // Sidebar toggle functionality
     const sidebarToggle = document.getElementById('sidebar-toggle');
     const sidebar = document.querySelector('.sidebar');
