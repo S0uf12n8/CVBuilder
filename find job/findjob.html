@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find your dream job with our job search filter tool">
+  <meta name="keywords" content="job search, Morocco jobs, filter jobs">
+  <title>Job Search Filter Tool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-job.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Find Your Dream Job</h1>
+      <p class="subtitle">Discover opportunities across Morocco</p>
+    </header>
+  
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search jobs by title..." oninput="filterJobs()">
+    </div>
+  
+    <div class="filter-container">
+      <div class="filters">
+        <div class="filter-group">
+          <label for="location">
+            <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Location
+          </label>
+          <div class="custom-select">
+            <select id="location" aria-label="Filter by location" onchange="filterJobs()">
+              <option value="">All Cities</option>
+              <option value="Casablanca">Casablanca</option>
+              <option value="Rabat">Rabat</option>
+              <option value="Marrakech">Marrakech</option>
+              <option value="Fes">Fes</option>
+              <option value="Tangier">Tangier</option>
+              <option value="Agadir">Agadir</option>
+              <option value="Oujda">Oujda</option>
+              <option value="Tetouan">Tetouan</option>
+              <option value="Kenitra">Kenitra</option>
+              <option value="Safi">Safi</option>
+            </select>
+          </div>
+        </div>
+      
+        <div class="filter-group">
+          <label for="jobType">
+            <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            Type
+          </label>
+          <div class="custom-select">
+            <select id="jobType" aria-label="Filter by job type" onchange="filterJobs()">
+              <option value="">All Types</option>
+              <option value="Online">Online</option>
+              <option value="Offline">Offline</option>
+              <option value="Hybrid">Hybrid</option>
+            </select>
+          </div>
+        </div>
+      
+        <div class="filter-group">
+          <label for="specialty">
+            <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            Specialty
+          </label>
+          <div class="custom-select">
+            <select id="specialty" aria-label="Filter by specialty" onchange="filterJobs()">
+              <option value="">All Specialties</option>
+              <option value="Developer">Developer</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Designer">Designer</option>
+              <option value="Data Analyst">Data Analyst</option>
+              <option value="Management">Management</option>
+            </select>
+          </div>
+        </div>
+        
+        <button id="clearFilters" onclick="clearFilters()" aria-label="Clear all filters">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="15" y1="9" x2="9" y2="15"></line>
+            <line x1="9" y1="9" x2="15" y2="15"></line>
+          </svg>
+          <span>Clear Filters</span>
+        </button>
+      </div>
+    </div>
+  
+    <div class="results-container">
+      <div id="resultsCount" class="results-count"></div>
+      <div id="results" class="results-grid"></div>
+      <div class="load-more-container">
+        <button id="showMore" onclick="showMoreJobs()">Show More Jobs</button>
+      </div>
+    </div>
+  </div>
+<footer>
+  <p>© 2025 Job Search Filter Tool | Created with ♥ in Morocco</p>
+</footer>
+
+<script src="script-job.js"></script>
+</body>
+</html>
