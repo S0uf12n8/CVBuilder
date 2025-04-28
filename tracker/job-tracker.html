@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Track your job applications and stay updated on your progress">
+  <meta name="keywords" content="job tracker, application tracking, Morocco jobs">
+  <title>Job Application Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="job-tracker.css">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="header-left">
+      <a href="../user-dashboard/index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        Back to Dashboard
+      </a>
+      <h1>Job Application Tracker</h1>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-primary" id="addApplicationBtn">
+        <i class="fas fa-plus"></i> Add Application
+      </button>
+    </div>
+  </header>
+  
+  <p class="subtitle">Track and manage your job applications</p>
+  
+  <div class="tabs">
+    <div class="tab active" data-tab="applications">My Applications</div>
+    <div class="tab" data-tab="notes">Notes & Updates</div>
+    <div class="tab" data-tab="stats">Analytics</div>
+  </div>
+  
+  <!-- Applications Tab -->
+  <div class="tab-content active" id="applications">
+    <div class="search-filter">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search applications...">
+      </div>
+      <div class="filter-group">
+        <label for="statusFilter">Status:</label>
+        <select id="statusFilter" class="filter-select">
+          <option value="">All Statuses</option>
+          <option value="Applied">Applied</option>
+          <option value="Interview">Interview</option>
+          <option value="Testing">Testing</option>
+          <option value="Offered">Offered</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="dateFilter">Date:</label>
+        <select id="dateFilter" class="filter-select">
+          <option value="">All Time</option>
+          <option value="today">Today</option>
+          <option value="week">This Week</option>
+          <option value="month">This Month</option>
+          <option value="quarter">Last 3 Months</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Position</th>
+            <th>Date Applied</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Last Update</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="applications-table">
+          <tr>
+            <td>TechMorocco</td>
+            <td>Frontend Developer</td>
+            <td>April 15, 2025</td>
+            <td>Agadir</td>
+            <td><span class="status-badge status-interview">Interview</span></td>
+            <td>April 25, 2025</td>
+            <td>
+              <button class="action-btn view-btn" title="View Details">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="action-btn edit-btn" title="Edit">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="action-btn add-note-btn" title="Add Note">
+                <i class="fas fa-sticky-note"></i>
+              </button>
+              <button class="action-btn delete-btn" title="Delete">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>DataSystems</td>
+            <td>Backend Developer</td>
+            <td>April 12, 2025</td>
+            <td>Safi</td>
+            <td><span class="status-badge status-testing">Testing</span></td>
+            <td>April 22, 2025</td>
+            <td>
+              <button class="action-btn view-btn" title="View Details">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="action-btn edit-btn" title="Edit">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="action-btn add-note-btn" title="Add Note">
+                <i class="fas fa-sticky-note"></i>
+              </button>
+              <button class="action-btn delete-btn" title="Delete">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>InsightData</td>
+            <td>Data Analyst</td>
+            <td>April 10, 2025</td>
+            <td>Marrakech</td>
+            <td><span class="status-badge status-offered">Offered</span></td>
+            <td>April 18, 2025</td>
+            <td>
+              <button class="action-btn view-btn" title="View Details">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="action-btn edit-btn" title="Edit">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="action-btn add-note-btn" title="Add Note">
+                <i class="fas fa-sticky-note"></i>
+              </button>
+              <button class="action-btn delete-btn" title="Delete">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>CreativeLab</td>
+            <td>Graphic Designer</td>
+            <td>April 8, 2025</td>
+            <td>Casablanca</td>
+            <td><span class="status-badge status-applied">Applied</span></td>
+            <td>April 8, 2025</td>
+            <td>
+              <button class="action-btn view-btn" title="View Details">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="action-btn edit-btn" title="Edit">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="action-btn add-note-btn" title="Add Note">
+                <i class="fas fa-sticky-note"></i>
+              </button>
+              <button class="action-btn delete-btn" title="Delete">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>BrandConnect</td>
+            <td>Marketing Manager</td>
+            <td>April 5, 2025</td>
+            <td>Rabat</td>
+            <td><span class="status-badge status-rejected">Rejected</span></td>
+            <td>April 15, 2025</td>
+            <td>
+              <button class="action-btn view-btn" title="View Details">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="action-btn edit-btn" title="Edit">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="action-btn add-note-btn" title="Add Note">
+                <i class="fas fa-sticky-note"></i>
+              </button>
+              <button class="action-btn delete-btn" title="Delete">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Notes Tab -->
+  <div class="tab-content" id="notes">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">April 25, 2025</div>
+          <div class="timeline-title">Interview Scheduled - TechMorocco</div>
+          <div class="timeline-text">Technical interview scheduled for May 2, 2025 at 2:00 PM. Will be meeting with the engineering team to discuss frontend development skills and experience with React.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">April 22, 2025</div>
+          <div class="timeline-title">Test Assignment - DataSystems</div>
+          <div class="timeline-text">Received coding test assignment. Need to build a RESTful API using Node.js. Deadline is April 29, 2025.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">April 18, 2025</div>
+          <div class="timeline-title">Job Offer - InsightData</div>
+          <div class="timeline-text">Received job offer for Data Analyst position. Salary: 16,000 - 20,000 MAD. Need to respond by April 25, 2025.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">April 15, 2025</div>
+          <div class="timeline-title">Rejection - BrandConnect</div>
+          <div class="timeline-text">Application for Marketing Manager position was rejected. Feedback: Looking for candidates with more industry-specific experience.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">April 12, 2025</div>
+          <div class="timeline-title">Initial Screening - DataSystems</div>
+          <div class="timeline-text">Completed initial phone screening with HR. Discussion focused on experience with backend development and database design. Moving to technical assessment stage.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Stats Tab -->
+  <div class="tab-content" id="stats">
+    <div class="form-grid">
+      <div class="form-container">
+        <h3 class="form-title">Application Summary</h3>
+        <div id="stats-summary">
+          <p><strong>Total Applications:</strong> <span id="total-count">5</span></p>
+          <p><strong>Active Applications:</strong> <span id="active-count">4</span></p>
+          <p><strong>Applications This Month:</strong> <span id="month-count">5</span></p>
+          <p><strong>Interviews:</strong> <span id="interview-count">1</span></p>
+          <p><strong>Testing Stages:</strong> <span id="test-count">1</span></p>
+          <p><strong>Offers Received:</strong> <span id="offer-count">1</span></p>
+          <p><strong>Rejections:</strong> <span id="reject-count">1</span></p>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <h3 class="form-title">Upcoming Deadlines</h3>
+        <div id="upcoming-events">
+          <div class="event-item">
+            <p class="event-date">April 29, 2025</p>
+            <p class="event-title">Coding Test Deadline - DataSystems</p>
+          </div>
+          <div class="event-item">
+            <p class="event-date">May 2, 2025</p>
+            <p class="event-title">Technical Interview - TechMorocco</p>
+            <p class="event-time">14:00 - 15:30</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add Application Modal -->
+  <div id="addApplicationModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Add New Application</h3>
+        <button class="close">&times;</button>
+      </div>
+      <form id="applicationForm">
+        <div class="form-group">
+          <label for="companyName">Company Name</label>
+          <input type="text" id="companyName" placeholder="e.g., TechMorocco" required>
+        </div>
+        <div class="form-group">
+          <label for="position">Position</label>
+          <input type="text" id="position" placeholder="e.g., Frontend Developer" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dateApplied">Date Applied</label>
+            <input type="date" id="dateApplied" required>
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="e.g., Casablanca">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="jobStatus">Status</label>
+            <select id="jobStatus" required>
+              <option value="Applied">Applied</option>
+              <option value="Interview">Interview</option>
+              <option value="Testing">Testing</option>
+              <option value="Offered">Offered</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="source">Application Source</label>
+            <input type="text" id="source" placeholder="e.g., LinkedIn, Company Website">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="jobDescription">Job Description/Notes</label>
+          <textarea id="jobDescription" placeholder="Add any relevant details or notes about the position..."></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactName">Contact Person</label>
+            <input type="text" id="contactName" placeholder="e.g., John Smith">
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Contact Email</label>
+            <input type="email" id="contactEmail" placeholder="e.g., john@company.com">
+          </div>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" id="cancelAddBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Add Note Modal -->
+  <div id="addNoteModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Add Note/Update</h3>
+        <button class="close">&times;</button>
+      </div>
+      <form id="noteForm">
+        <input type="hidden" id="noteApplicationId" value="">
+        <div class="form-group">
+          <label for="noteTitle">Title</label>
+          <input type="text" id="noteTitle" placeholder="e.g., Interview Scheduled" required>
+        </div>
+        <div class="form-group">
+          <label for="noteDate">Date</label>
+          <input type="date" id="noteDate" required>
+        </div>
+        <div class="form-group">
+          <label for="noteType">Type</label>
+          <select id="noteType" required>
+            <option value="general">General Update</option>
+            <option value="interview">Interview</option>
+            <option value="test">Technical Test</option>
+            <option value="offer">Job Offer</option>
+            <option value="rejection">Rejection</option>
+            <option value="deadline">Deadline</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="noteDetails">Details</label>
+          <textarea id="noteDetails" rows="4" placeholder="Add details about this update..." required></textarea>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" id="cancelNoteBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Note</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- View Details Modal -->
+  <div id="viewDetailsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Application Details</h3>
+        <button class="close">&times;</button>
+      </div>
+      <div id="applicationDetails">
+        <h4 id="detailCompany">TechMorocco</h4>
+        <p id="detailPosition"><strong>Position:</strong> Frontend Developer</p>
+        <p id="detailDate"><strong>Applied on:</strong> April 15, 2025</p>
+        <p id="detailLocation"><strong>Location:</strong> Agadir</p>
+        <p id="detailStatus"><strong>Status:</strong> <span class="status-badge status-interview">Interview</span></p>
+        <p id="detailSource"><strong>Source:</strong> LinkedIn</p>
+        <p id="detailContact"><strong>Contact:</strong> Sarah Johnson (sarah@techmorocco.com)</p>
+        
+        <h4>Description/Notes:</h4>
+        <p id="detailDescription">Frontend developer position focusing on React development. Responsibilities include building responsive UI components, optimizing application performance, and collaborating with backend developers.</p>
+        
+        <h4>Updates:</h4>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">April 25, 2025</div>
+              <div class="timeline-title">Interview Scheduled</div>
+              <div class="timeline-text">Technical interview scheduled for May 2, 2025 at 2:00 PM. Will be meeting with the engineering team to discuss frontend development skills and experience with React.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="job-tracker.js"></script>
+</body>
+</html>
