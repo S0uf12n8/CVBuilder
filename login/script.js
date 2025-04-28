@@ -1,25 +1,48 @@
-const container =document.querySelector('.container');
-const signupBtn =document.querySelector('.signup-btn');
-const loginBtn =document.querySelector('.login-btn');
+const container = document.querySelector('.container');
+const signupBtn = document.querySelector('.signup-btn');
+const loginBtn = document.querySelector('.login-btn');
 
-signupBtn.addEventListener('click', () =>{
+signupBtn.addEventListener('click', () => {
     container.classList.add('active');
 });
-loginBtn.addEventListener('click', () =>{
+loginBtn.addEventListener('click', () => {
     container.classList.remove('active');
 });
+
+// Handle login form submission
 document.getElementById('login-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const name = document.getElementById('name').value;
+    const username = document.getElementById('username').value;
     const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-    if (name && email) {
-        // Save name to localStorage (optional, if you want to show it later)
-        localStorage.setItem('userName', name);
+    if (username && email && password) {
+        localStorage.setItem('username', username);
         localStorage.setItem('userEmail', email);
+        
+        // Redirect to dashboard page
+        window.location.href = "../user-dashboard/index.html";
+    } else {
+        alert("Please fill in all fields");
+    }
+});
 
-        // Redirect to dashboard
-        window.location.href = "user-dashboard\index.html";
+// Handle signup form submission
+document.getElementById('signup-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const username = document.getElementById('signup-username').value;
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+
+    if (username && email && password) {
+        localStorage.setItem('username', username);
+        localStorage.setItem('userEmail', email);
+        
+        // Redirect to dashboard page
+        window.location.href = "../user-dashboard/index.html";
+    } else {
+        alert("Please fill in all fields");
     }
 });
