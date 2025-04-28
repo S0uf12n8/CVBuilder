@@ -41,6 +41,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Logout button functionality
+    const logoutButton = document.querySelector('.logout-btn');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Show confirmation modal or use browser confirm
+            if (confirm('Are you sure you want to log out?')) {
+                // Clear user data from localStorage
+                localStorage.removeItem('username');
+                localStorage.removeItem('userEmail');
+                
+                // Show notification
+                showNotification('Successfully logged out', 'info');
+                
+                // Redirect to login page after a short delay
+                setTimeout(() => {
+                    window.location.href = "../login/login.html";
+                }, 1000);
+            }
+        });
+    }
+    
     // Navigation active state
     const navItems = document.querySelectorAll('.nav-item a');
     navItems.forEach(item => {
