@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f0f2f5;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  
+  .card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #4a6bff;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: #4a6bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .button:hover {
+    background-color: #3a5bef;
+  }
+  
+  .secondary-button {
+    background-color: #f0f2f5;
+    color: #333;
+  }
+  
+  .secondary-button:hover {
+    background-color: #e0e2e5;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .setup-box, .chat-box, .question-library {
+    padding: 20px;
+    border-top: 1px solid #eee;
+  }
+  
+  .setup-box h3, .question-library h3 {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  select, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .progress-bar {
+    height: 10px;
+    background-color: #f0f2f5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #4a6bff;
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.3s;
+  }
+  
+  .chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+  
+  .input-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .question-list {
+    list-style: none;
+  }
+  
+  .question-list li {
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .question-list li:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .question-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .filter-button {
+    padding: 8px 15px;
+    background-color: #f0f2f5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .filter-button.active {
+    background-color: #4a6bff;
+    color: white;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
