@@ -2,7 +2,7 @@
 
 An intelligent resume builder that uses AI to help users create professional, ATS-optimized resumes. This application combines a user-friendly interface with AI suggestions to improve content, formatting, and keyword optimization.
 
-![AI Resume Builder Screenshot](previw.png)
+![AI Resume Builder Screenshot](preview.png)
 
 ## ✨ Features
 
