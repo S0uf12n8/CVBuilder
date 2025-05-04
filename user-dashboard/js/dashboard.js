@@ -230,6 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize any other components or functionality
     initializeCharts();
     initializeInterviewPrep();
+    initializeJobSearch();
 });
 
 // Placeholder for chart initialization
@@ -574,5 +575,520 @@ function initializeInterviewPrep() {
     // Check if interview-prep is in URL hash on page load
     if (window.location.hash === '#interview-prep') {
         showInterviewPrepSection();
+    }
+}
+
+// Initialize Job Search functionality
+function initializeJobSearch() {
+    // Job database with expanded fields
+    const jobs = [
+        { 
+            id: 1,
+            title: "Frontend Developer", 
+            location: "Agadir", 
+            type: "Online", 
+            specialty: "Developer",
+            description: "Creating modern responsive web interfaces with React",
+            salary: "12,000 - 15,000 MAD",
+            company: "TechMorocco"
+        },
+        { 
+            id: 2,
+            title: "Backend Developer", 
+            location: "Safi", 
+            type: "Online", 
+            specialty: "Developer",
+            description: "Building robust APIs and server applications",
+            salary: "13,000 - 16,000 MAD",
+            company: "DataSystems"
+        },
+        { 
+            id: 3,
+            title: "Marketing Manager", 
+            location: "Tetouan", 
+            type: "Offline", 
+            specialty: "Marketing",
+            description: "Leading marketing campaigns and strategy",
+            salary: "18,000 - 22,000 MAD",
+            company: "BrandConnect"
+        },
+        { 
+            id: 4,
+            title: "Graphic Designer", 
+            location: "Casablanca", 
+            type: "Offline", 
+            specialty: "Designer",
+            description: "Creating visual concepts for brand identities",
+            salary: "10,000 - 15,000 MAD",
+            company: "CreativeLab"
+        },
+        { 
+            id: 5,
+            title: "Data Analyst", 
+            location: "Marrakech", 
+            type: "Online", 
+            specialty: "Data Analyst",
+            description: "Analyzing and interpreting complex data sets",
+            salary: "16,000 - 20,000 MAD",
+            company: "InsightData"
+        },
+        { 
+            id: 6,
+            title: "UX Designer", 
+            location: "Rabat", 
+            type: "Hybrid", 
+            specialty: "Designer",
+            description: "Creating intuitive user experiences for web and mobile",
+            salary: "14,000 - 18,000 MAD",
+            company: "UserFirst"
+        },
+        { 
+            id: 7,
+            title: "Product Manager", 
+            location: "Fes", 
+            type: "Offline", 
+            specialty: "Management",
+            description: "Leading product development and roadmap planning",
+            salary: "20,000 - 25,000 MAD",
+            company: "InnovateMorocco"
+        },
+        { 
+            id: 8,
+            title: "SEO Specialist", 
+            location: "Tangier", 
+            type: "Online", 
+            specialty: "Marketing",
+            description: "Optimizing websites for better search engine performance",
+            salary: "12,000 - 15,000 MAD",
+            company: "RankHigher"
+        },
+        { 
+            id: 9,
+            title: "Full Stack Developer", 
+            location: "Oujda", 
+            type: "Online", 
+            specialty: "Developer",
+            description: "Creating end-to-end web applications",
+            salary: "15,000 - 20,000 MAD",
+            company: "TechSolutions"
+        },
+        { 
+            id: 10,
+            title: "UI Designer", 
+            location: "Tetouan", 
+            type: "Offline", 
+            specialty: "Designer",
+            description: "Creating visually appealing interfaces for websites and apps",
+            salary: "12,000 - 16,000 MAD",
+            company: "DesignMakers"
+        },
+        { 
+            id: 11,
+            title: "Social Media Manager", 
+            location: "Kenitra", 
+            type: "Online", 
+            specialty: "Marketing",
+            description: "Managing social media presence across platforms",
+            salary: "10,000 - 14,000 MAD",
+            company: "SocialBoost"
+        },
+        { 
+            id: 12,
+            title: "Mobile App Developer", 
+            location: "Rabat", 
+            type: "Hybrid", 
+            specialty: "Developer",
+            description: "Building native and cross-platform mobile applications",
+            salary: "16,000 - 22,000 MAD",
+            company: "AppFactory"
+        },
+        { 
+            id: 13,
+            title: "Content Writer", 
+            location: "Casablanca", 
+            type: "Online", 
+            specialty: "Marketing",
+            description: "Creating engaging content for websites and marketing",
+            salary: "8,000 - 12,000 MAD",
+            company: "ContentKings"
+        },
+        { 
+            id: 14,
+            title: "Project Manager", 
+            location: "Marrakech", 
+            type: "Offline", 
+            specialty: "Management",
+            description: "Overseeing project execution and team coordination",
+            salary: "18,000 - 24,000 MAD",
+            company: "ProjectPro"
+        },
+        { 
+            id: 15,
+            title: "DevOps Engineer", 
+            location: "Agadir", 
+            type: "Hybrid", 
+            specialty: "Developer",
+            description: "Managing infrastructure and deployment automation",
+            salary: "18,000 - 25,000 MAD",
+            company: "CloudOps"
+        },
+        // Additional international jobs
+        { 
+            id: 16,
+            title: "Senior Frontend Developer", 
+            location: "San Francisco", 
+            type: "Hybrid", 
+            specialty: "Developer",
+            description: "Leading frontend development for a high-growth startup",
+            salary: "$120,000 - $150,000",
+            company: "TechGrowth"
+        },
+        { 
+            id: 17,
+            title: "Data Scientist", 
+            location: "New York", 
+            type: "Offline", 
+            specialty: "Data Analyst",
+            description: "Building machine learning models for financial forecasting",
+            salary: "$140,000 - $170,000",
+            company: "FinAnalytics"
+        },
+        { 
+            id: 18,
+            title: "React Native Developer", 
+            location: "London", 
+            type: "Online", 
+            specialty: "Developer",
+            description: "Developing cross-platform mobile applications with React Native",
+            salary: "£65,000 - £85,000",
+            company: "MobileInnovate"
+        }
+    ];
+
+    // Application state
+    const state = {
+        displayedJobs: [],
+        filteredJobs: [],
+        currentJobsCount: 0,
+        jobsPerPage: 6,
+        searchTerm: '',
+        filters: {
+            location: '',
+            jobType: '',
+            specialty: ''
+        }
+    };
+
+    // Initialize the job search
+    function initApp() {
+        // Get all jobs initially
+        state.displayedJobs = [...jobs];
+        state.filteredJobs = [...jobs];
+        
+        // Reset counters
+        state.currentJobsCount = 0;
+        
+        // Display initial set of jobs
+        displayJobs(state.filteredJobs);
+        
+        // Update results count
+        updateResultsCount();
+    }
+
+    // Display jobs in the UI
+    function displayJobs(jobList, append = false) {
+        const resultsDiv = document.getElementById('results');
+        
+        if (!resultsDiv) return;
+        
+        // Clear results or keep existing
+        if (!append) {
+            resultsDiv.innerHTML = '';
+            state.currentJobsCount = 0;
+        }
+        
+        // Get next batch of jobs
+        const jobsToShow = jobList.slice(state.currentJobsCount, state.currentJobsCount + state.jobsPerPage);
+        
+        if (jobsToShow.length === 0 && !append) {
+            resultsDiv.innerHTML = '<div class="no-results">No jobs match your criteria. Try adjusting your filters.</div>';
+            const showMoreBtn = document.getElementById('showMore');
+            if (showMoreBtn) showMoreBtn.style.display = 'none';
+            return;
+        }
+        
+        // Create job cards
+        jobsToShow.forEach(job => {
+            const jobCard = document.createElement('div');
+            jobCard.className = 'dashboard-job-item';
+            jobCard.setAttribute('data-id', job.id);
+            
+            // Calculate a random match percentage (in a real app this would be based on user skills)
+            const matchPercentage = Math.floor(Math.random() * 31) + 70; // 70-100%
+            
+            jobCard.innerHTML = `
+                <div class="job-header">
+                    <div class="job-company-logo small">
+                        <img src="https://via.placeholder.com/40?text=${job.company.charAt(0)}" alt="${job.company} logo">
+                    </div>
+                    <div class="job-header-details">
+                        <h4>${job.title}</h4>
+                        <p>${job.company}</p>
+                    </div>
+                    <div class="job-match small">
+                        <span class="match-label">${matchPercentage}% Match</span>
+                    </div>
+                </div>
+                <div class="job-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
+                    <span><i class="fas fa-briefcase"></i> ${job.type}</span>
+                    <span><i class="fas fa-tags"></i> ${job.specialty}</span>
+                    <span><i class="fas fa-money-bill-wave"></i> ${job.salary}</span>
+                </div>
+                <div class="job-actions">
+                    <button class="btn sm primary">Apply Now</button>
+                    <button class="btn sm secondary">Save Job</button>
+                </div>
+            `;
+            
+            resultsDiv.appendChild(jobCard);
+        });
+        
+        // Update count of displayed jobs
+        state.currentJobsCount += jobsToShow.length;
+        
+        // Show/hide "Show More" button
+        const showMoreBtn = document.getElementById('showMore');
+        if (showMoreBtn) {
+            showMoreBtn.style.display = state.currentJobsCount >= jobList.length ? 'none' : 'block';
+        }
+    }
+
+    // Filter jobs based on selected criteria and search term
+    window.filterJobs = function() {
+        // Get filter values
+        const locationSelect = document.getElementById('location');
+        const jobTypeSelect = document.getElementById('jobType');
+        const specialtySelect = document.getElementById('specialty');
+        const searchInput = document.getElementById('searchInput');
+        
+        if (!locationSelect || !jobTypeSelect || !specialtySelect || !searchInput) return;
+        
+        state.filters.location = locationSelect.value;
+        state.filters.jobType = jobTypeSelect.value;
+        state.filters.specialty = specialtySelect.value;
+        state.searchTerm = searchInput.value.toLowerCase();
+        
+        // Filter jobs
+        state.filteredJobs = jobs.filter(job => {
+            const matchesLocation = !state.filters.location || job.location === state.filters.location;
+            const matchesType = !state.filters.jobType || job.type === state.filters.jobType;
+            const matchesSpecialty = !state.filters.specialty || job.specialty === state.filters.specialty;
+            const matchesSearch = !state.searchTerm || 
+                                job.title.toLowerCase().includes(state.searchTerm) || 
+                                job.description.toLowerCase().includes(state.searchTerm) ||
+                                job.company.toLowerCase().includes(state.searchTerm);
+            
+            return matchesLocation && matchesType && matchesSpecialty && matchesSearch;
+        });
+        
+        // Reset and display filtered jobs
+        displayJobs(state.filteredJobs);
+        
+        // Update results count
+        updateResultsCount();
+    }
+
+    // Clear all filters and reset the view
+    window.clearFilters = function() {
+        // Reset all filter controls
+        const locationSelect = document.getElementById('location');
+        const jobTypeSelect = document.getElementById('jobType');
+        const specialtySelect = document.getElementById('specialty');
+        const searchInput = document.getElementById('searchInput');
+        
+        if (!locationSelect || !jobTypeSelect || !specialtySelect || !searchInput) return;
+        
+        locationSelect.value = '';
+        jobTypeSelect.value = '';  
+        specialtySelect.value = '';
+        searchInput.value = '';
+        
+        // Reset application state
+        state.filters.location = '';
+        state.filters.jobType = '';
+        state.filters.specialty = '';
+        state.searchTerm = '';
+        state.filteredJobs = [...jobs];
+        
+        // Display all jobs again
+        displayJobs(state.filteredJobs);
+        
+        // Update results count
+        updateResultsCount();
+    }
+
+    // Show more jobs when button is clicked
+    window.showMoreJobs = function() {
+        displayJobs(state.filteredJobs, true);
+        updateResultsCount();
+    }
+
+    // Update the results count display
+    function updateResultsCount() {
+        const countElement = document.getElementById('resultsCount');
+        if (!countElement) return;
+        
+        const totalJobs = state.filteredJobs.length;
+        const shownJobs = Math.min(state.currentJobsCount, totalJobs);
+        
+        if (totalJobs === 0) {
+            countElement.textContent = 'No jobs found';
+        } else {
+            countElement.textContent = `Showing ${shownJobs} of ${totalJobs} jobs`;
+        }
+    }
+
+    // Initialize custom select dropdown functionality
+    function initializeCustomSelects() {
+        const customSelects = document.getElementsByClassName("custom-select");
+        
+        for (let i = 0; i < customSelects.length; i++) {
+            const select = customSelects[i].getElementsByTagName("select")[0];
+            if (!select) continue;
+            
+            // Create a new DIV that will act as the selected item
+            const selectedDiv = document.createElement("DIV");
+            selectedDiv.setAttribute("class", "select-selected");
+            selectedDiv.innerHTML = select.options[select.selectedIndex].innerHTML;
+            customSelects[i].appendChild(selectedDiv);
+            
+            // Create a new DIV that will contain the option list
+            const optionsDiv = document.createElement("DIV");
+            optionsDiv.setAttribute("class", "select-items");
+            
+            for (let j = 0; j < select.length; j++) {
+                // For each option in the original select element,
+                // create a new DIV that will act as an option item
+                const optionDiv = document.createElement("DIV");
+                optionDiv.innerHTML = select.options[j].innerHTML;
+                
+                // When an item is clicked, update the original select box and the selected item
+                optionDiv.addEventListener("click", function(e) {
+                    let originalSelect = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                    let selectedDiv = this.parentNode.previousSibling;
+                    
+                    for (let k = 0; k < originalSelect.length; k++) {
+                        if (originalSelect.options[k].innerHTML === this.innerHTML) {
+                            originalSelect.selectedIndex = k;
+                            selectedDiv.innerHTML = this.innerHTML;
+                            
+                            let sameAsSelected = this.parentNode.getElementsByClassName("same-as-selected");
+                            for (let l = 0; l < sameAsSelected.length; l++) {
+                                sameAsSelected[l].removeAttribute("class");
+                            }
+                            
+                            this.setAttribute("class", "same-as-selected");
+                            
+                            // Trigger the onchange event
+                            let event = new Event('change');
+                            originalSelect.dispatchEvent(event);
+                            break;
+                        }
+                    }
+                    
+                    selectedDiv.click();
+                });
+                
+                optionsDiv.appendChild(optionDiv);
+            }
+            
+            customSelects[i].appendChild(optionsDiv);
+            
+            // When the select box is clicked, toggle between hiding and showing the options
+            selectedDiv.addEventListener("click", function(e) {
+                e.stopPropagation();
+                
+                // Close all other select boxes
+                closeAllSelect(this);
+                
+                // Toggle active class and show/hide options
+                this.classList.toggle("select-arrow-active");
+                this.classList.toggle("select-focused");
+                
+                const nextSibling = this.nextSibling;
+                if (nextSibling) {
+                    nextSibling.classList.toggle("select-items-open");
+                }
+            });
+        }
+        
+        // Close all select boxes when clicking elsewhere
+        function closeAllSelect(elmnt) {
+            const arrNo = [];
+            const selectItems = document.getElementsByClassName("select-items");
+            const selectSelected = document.getElementsByClassName("select-selected");
+            
+            for (let i = 0; i < selectSelected.length; i++) {
+                if (elmnt === selectSelected[i]) {
+                    arrNo.push(i);
+                } else {
+                    selectSelected[i].classList.remove("select-arrow-active");
+                    selectSelected[i].classList.remove("select-focused");
+                }
+            }
+            
+            for (let i = 0; i < selectItems.length; i++) {
+                if (arrNo.indexOf(i) === -1) {
+                    selectItems[i].classList.remove("select-items-open");
+                }
+            }
+        }
+        
+        // Close all select boxes when clicking elsewhere
+        document.addEventListener("click", closeAllSelect);
+    }
+
+    // Function to handle showing job search section
+    function showJobSearchSection() {
+        // Show stats cards which are always visible
+        document.querySelector('.stats-cards').style.display = 'grid';
+        
+        // Hide all main content sections except stats-cards and find-job-full-section
+        const contentSections = document.querySelectorAll('.dashboard-content > section:not(.stats-cards):not(.find-job-full-section)');
+        contentSections.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Show job search section
+        const jobSearchSection = document.querySelector('.find-job-full-section');
+        if (jobSearchSection) {
+            jobSearchSection.style.display = 'block';
+            
+            // Scroll to job search section
+            jobSearchSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Handle job search link in sidebar
+    const jobSearchNavItem = document.querySelector('.nav-item a[href="../find job/findjob.html"]');
+    if (jobSearchNavItem) {
+        jobSearchNavItem.addEventListener('click', function(e) {
+            e.preventDefault();
+            showJobSearchSection();
+        });
+    }
+
+    // Initialize the job search functionality
+    initApp();
+    initializeCustomSelects();
+    
+    // Set up job service card link
+    const findJobsBtn = document.querySelector('.card-actions a[href="services/job-search/index.html"]');
+    if (findJobsBtn) {
+        findJobsBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showJobSearchSection();
+        });
     }
 }

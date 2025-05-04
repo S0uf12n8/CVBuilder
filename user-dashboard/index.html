@@ -371,6 +371,92 @@
                     </div>
                 </section>
 
+                <!-- Find Job Section (Complete Integration) -->
+                <section class="find-job-full-section">
+                    <div class="section-header">
+                        <h2>Find Your Dream Job</h2>
+                        <p class="subtitle">Discover opportunities across Morocco and globally</p>
+                    </div>
+                  
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search jobs by title..." oninput="filterJobs()">
+                    </div>
+                  
+                    <div class="filter-container">
+                        <div class="filters">
+                            <div class="filter-group">
+                                <label for="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Location
+                                </label>
+                                <div class="custom-select">
+                                    <select id="location" aria-label="Filter by location" onchange="filterJobs()">
+                                        <option value="">All Cities</option>
+                                        <option value="Casablanca">Casablanca</option>
+                                        <option value="Rabat">Rabat</option>
+                                        <option value="Marrakech">Marrakech</option>
+                                        <option value="Fes">Fes</option>
+                                        <option value="Tangier">Tangier</option>
+                                        <option value="Agadir">Agadir</option>
+                                        <option value="Oujda">Oujda</option>
+                                        <option value="Tetouan">Tetouan</option>
+                                        <option value="Kenitra">Kenitra</option>
+                                        <option value="Safi">Safi</option>
+                                        <option value="San Francisco">San Francisco</option>
+                                        <option value="New York">New York</option>
+                                        <option value="London">London</option>
+                                    </select>
+                                </div>
+                            </div>
+                          
+                            <div class="filter-group">
+                                <label for="jobType">
+                                    <i class="fas fa-briefcase"></i>
+                                    Type
+                                </label>
+                                <div class="custom-select">
+                                    <select id="jobType" aria-label="Filter by job type" onchange="filterJobs()">
+                                        <option value="">All Types</option>
+                                        <option value="Online">Remote</option>
+                                        <option value="Offline">On-site</option>
+                                        <option value="Hybrid">Hybrid</option>
+                                    </select>
+                                </div>
+                            </div>
+                          
+                            <div class="filter-group">
+                                <label for="specialty">
+                                    <i class="fas fa-laptop-code"></i>
+                                    Specialty
+                                </label>
+                                <div class="custom-select">
+                                    <select id="specialty" aria-label="Filter by specialty" onchange="filterJobs()">
+                                        <option value="">All Specialties</option>
+                                        <option value="Developer">Developer</option>
+                                        <option value="Marketing">Marketing</option>
+                                        <option value="Designer">Designer</option>
+                                        <option value="Data Analyst">Data Analyst</option>
+                                        <option value="Management">Management</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button id="clearFilters" onclick="clearFilters()" class="btn secondary" aria-label="Clear all filters">
+                                <i class="fas fa-times-circle"></i>
+                                <span>Clear Filters</span>
+                            </button>
+                        </div>
+                    </div>
+                  
+                    <div class="results-container">
+                        <div id="resultsCount" class="results-count"></div>
+                        <div id="results" class="results-grid"></div>
+                        <div class="load-more-container">
+                            <button id="showMore" onclick="showMoreJobs()" class="btn secondary full-width">Show More Jobs</button>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Interview Preparation Section -->
                 <section class="interview-prep-section" id="interview-prep">
                     <div class="section-header">
