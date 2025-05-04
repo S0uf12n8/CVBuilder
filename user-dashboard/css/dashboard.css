@@ -1238,6 +1238,11 @@ body {
     margin-left: 15px;
 }
 
+.interview-actions .btn {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
 .more-interviews {
     text-align: center;
     margin-top: 10px;
