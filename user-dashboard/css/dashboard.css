@@ -71,6 +71,48 @@ body {
     width: var(--sidebar-collapsed-width);
 }
 
+.sidebar.collapsed .logo h2,
+.sidebar.collapsed .user-details,
+.sidebar.collapsed .nav-item a span,
+.sidebar.collapsed .logout-btn span {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+}
+
+.sidebar.collapsed .nav-item a {
+    justify-content: center;
+    padding: 12px 0;
+}
+
+.sidebar.collapsed .nav-item a i {
+    margin-right: 0;
+    font-size: 20px;
+}
+
+.sidebar.collapsed .logout-btn {
+    justify-content: center;
+}
+
+.sidebar.collapsed .logout-btn i {
+    margin-right: 0;
+}
+
+/* Adjusting logo when collapsed */
+.sidebar.collapsed .logo {
+    justify-content: center;
+}
+
+/* Adjust user info when collapsed */
+.sidebar.collapsed .user-info {
+    justify-content: center;
+}
+
+.sidebar.collapsed .user-avatar {
+    margin-right: 0;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -1196,11 +1238,6 @@ body {
     margin-left: 15px;
 }
 
-.interview-actions .btn {
-    padding: 6px 12px;
-    font-size: 13px;
-}
-
 .more-interviews {
     text-align: center;
     margin-top: 10px;
@@ -1425,6 +1462,17 @@ body {
     
     .cards-container {
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+}
+
+/* Added styles for proper sidebar toggle at desktop sizes */
+@media (min-width: 992px) {
+    .main-content.expanded {
+        margin-left: var(--sidebar-collapsed-width);
+    }
+    
+    .sidebar.collapsed + .main-content {
+        margin-left: var(--sidebar-collapsed-width);
     }
 }
 

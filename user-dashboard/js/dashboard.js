@@ -18,7 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     sidebarToggle.addEventListener('click', function() {
-        sidebar.classList.toggle('expanded');
+        if (window.innerWidth < 992) {
+            sidebar.classList.toggle('expanded');
+        } else {
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('expanded');
+        }
     });
     
     // Close expanded sidebar when clicking outside
