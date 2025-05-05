@@ -85,7 +85,6 @@ const AIAssistant = (function() {
         // Create HTML structure for loading animation
         loadingContainer.innerHTML = `
             <div class="loading-animation">
-                <i class="fas fa-robot" style="color: var(--primary-color);"></i>
                 <div class="loading-dots">
                     <div class="dot"></div>
                     <div class="dot"></div>
